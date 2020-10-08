@@ -41,7 +41,7 @@ public class LinearPrograms {
 // и целую части числа и вывести полученное значение числа.
         double w = 123.456;
         double n = (int) w;
-        // double result4 = (z * 1000) % 1000  +(int)z/1000.0;
+        // double result4 = (z * 1000) % 1000  +(int)z/1000.0;    1000.0 -это про расширение значений когда встречается int  и double
         double result4 = (w * 1000) % 1000 + n / 1000;
 
         System.out.println("4. Result LinearPrograms task4: " + result4);
