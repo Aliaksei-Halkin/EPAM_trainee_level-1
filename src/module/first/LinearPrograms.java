@@ -48,9 +48,17 @@ public class LinearPrograms {
 
 
 //5. Дано натуральное число Т, которое представляет длительность прошедшего времени в секундах.
-// Вывести данное значение длительности в часах, минутах и секундах в следующей форме:
+// Вывести данное значение длительности в часах, минутах и секундах в следующей форме:ННч ММмин SSc.
 
+        long t = System.currentTimeMillis();
+        int seconds = (int) (t % 60);
+        int minutes = (int) (((t - seconds) / 60) % 60);
+        int hours = (int) ((t - seconds) / 60/60) ;
 
+        System.out.println("5. Result LinearPrograms task5: " + hours+"ч "+minutes+"мин "+seconds+"c");
+//        System.out.println("5. Result LinearPrograms task5: " + seconds);
+//        System.out.println("5. Result LinearPrograms task5: " + minutes);
+//        System.out.println("5. Result LinearPrograms task5: " + hours);
 
 
 //6. Для данной области составить линейную программу, которая печатает true, если точка с координатами (х, у)
