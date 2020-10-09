@@ -53,9 +53,9 @@ public class LinearPrograms {
         long t = System.currentTimeMillis();
         int seconds = (int) (t % 60);
         int minutes = (int) (((t - seconds) / 60) % 60);
-        int hours = (int) ((t - seconds) / 60/60) ;
+        int hours = (int) ((t - seconds) / 60 / 60);
 
-        System.out.println("5. Result LinearPrograms task5: " + hours+"ч "+minutes+"мин "+seconds+"c");
+        System.out.println("5. Result LinearPrograms task5: " + hours + "ч " + minutes + "мин " + seconds + "c");
 //        System.out.println("5. Result LinearPrograms task5: " + seconds);
 //        System.out.println("5. Result LinearPrograms task5: " + minutes);
 //        System.out.println("5. Result LinearPrograms task5: " + hours);
@@ -63,6 +63,30 @@ public class LinearPrograms {
 
 //6. Для данной области составить линейную программу, которая печатает true, если точка с координатами (х, у)
 // принадлежит закрашенной области, и false — в противном случае:
+        int valueX = 10; //координата точки Х
+        int valueY = 100;//координата точки Y
+        boolean result6 = compare(valueX, valueY);
+        if (result6 = true) {
+            System.out.println("6. Result LinearPrograms task6: точка принадлежит области");
+        }  else  {
+            System.out.println("6. Result LinearPrograms task6: точка не принадлежит области ");
+        }
+
     }
 
+    //почему private только можно, а public нельзя?
+    // и почему в main не дает вставить этот метод
+    // возвращает false, но выводит на консоль как true ...
+    private static boolean compare(int valueX, int valueY) {
+        if ((valueX >= -4 && valueX <= 4 && valueY <= -3 && valueY <= 0) || (valueX >= -2 && valueX <= 2 && valueY
+                >= 0 && valueY <= 4)) {
+            System.out.println("flag1");
+            return true;
+        } else {
+            System.out.println("flag2");
+            return false;
+        }
+    }
 }
+
+
