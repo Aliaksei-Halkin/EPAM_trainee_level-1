@@ -11,10 +11,7 @@ public class Branching {
 
         if (angle1 + angle2 < 180) {
             System.out.print("1. Result Branching task1: треугольник существует");
-            boolean a1 = (angle1 == 90);
-            boolean a2 = (angle2 == 90);
-            boolean a3 = (angle3 == 90);
-            if (a1 | a2 | a3) {  //лучше | или || ?
+            if (angle1 == 90 | angle2 == 90 | angle3 == 90) {  //лучше | или || ?
                 System.out.println(", треуголник прямоугольный"); // так корректно выводить?
             }
         } else {
@@ -22,7 +19,6 @@ public class Branching {
         }
 
 //            2. Найти max{min(a, b), min(c, d)}.
-
 
 
 //            3. Даны три точки А(х1,у1), В(х2,у2) и С(х3,у3). Определить, будут ли они расположены на одной прямой.
