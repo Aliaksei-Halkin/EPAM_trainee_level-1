@@ -66,7 +66,8 @@ public class LinearPrograms {
         int valueX = 10; //координата точки Х
         int valueY = 100;//координата точки Y
         boolean result6 = compare(valueX, valueY);
-        if (result6 = true) {
+        //System.out.println(result6);
+        if (result6 == true) {
             System.out.println("6. Result LinearPrograms task6: точка принадлежит области");
         }  else  {
             System.out.println("6. Result LinearPrograms task6: точка не принадлежит области ");
@@ -76,7 +77,7 @@ public class LinearPrograms {
 
     //почему private только можно, а public нельзя?
     // и почему в main не дает вставить этот метод
-    // возвращает false, но выводит на консоль как true ...
+    
     private static boolean compare(int valueX, int valueY) {
         if ((valueX >= -4 && valueX <= 4 && valueY <= -3 && valueY <= 0) || (valueX >= -2 && valueX <= 2 && valueY
                 >= 0 && valueY <= 4)) {
