@@ -18,13 +18,7 @@ public class Branching {
             System.out.println("1. Result Branching task1: треугольник не существует");
         }
 
-//            2. Найти max{min(a, b), min(c, d)}.
-        int a = 15;
-        int b = 20;
-        int c = -15;
-        int d = 44;
-        int minAB = Math.min(a, b);
-        int minCD;
+        Task2_2();
 
 
 //            3. Даны три точки А(х1,у1), В(х2,у2) и С(х3,у3). Определить, будут ли они расположены на одной прямой.
@@ -32,5 +26,15 @@ public class Branching {
 //4. Заданы размеры А, В прямоугольного отверстия и размеры х, у, z кирпича. Определить, пройдет ли кирпич через отверстие.
 
 //5. Вычислить значение функции:
+    }
+
+    private static void Task2_2() {
+        //            2. Найти max{min(a, b), min(c, d)}.
+        int a = 15;
+        int b = 20;
+        int c = -15;
+        int d = 44;
+        int minAB = Math.min(a, b);
+        int minCD;
     }
 }
