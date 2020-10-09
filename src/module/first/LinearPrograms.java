@@ -63,13 +63,13 @@ public class LinearPrograms {
 
 //6. Для данной области составить линейную программу, которая печатает true, если точка с координатами (х, у)
 // принадлежит закрашенной области, и false — в противном случае:
-        int valueX = 10; //координата точки Х
-        int valueY = 100;//координата точки Y
+        int valueX = 1; //координата точки Х
+        int valueY = 1;//координата точки Y
         boolean result6 = compare(valueX, valueY);
         //System.out.println(result6);
-        if (result6 == true) {
+        if (result6) {
             System.out.println("6. Result LinearPrograms task6: точка принадлежит области");
-        }  else  {
+        } else {
             System.out.println("6. Result LinearPrograms task6: точка не принадлежит области ");
         }
 
@@ -77,16 +77,17 @@ public class LinearPrograms {
 
     //почему private только можно, а public нельзя?
     // и почему в main не дает вставить этот метод
-    
+
     private static boolean compare(int valueX, int valueY) {
-        if ((valueX >= -4 && valueX <= 4 && valueY <= -3 && valueY <= 0) || (valueX >= -2 && valueX <= 2 && valueY
-                >= 0 && valueY <= 4)) {
-            System.out.println("flag1");
-            return true;
-        } else {
-            System.out.println("flag2");
-            return false;
-        }
+        return firstArea(valueX, valueY) || secondArea(valueX, valueY);
+    }
+
+    private static boolean secondArea(int valueX, int valueY) {
+        return valueX >= -2 && valueX <= 2 && valueY >= 0 && valueY <= 4;
+    }
+
+    private static boolean firstArea(int valueX, int valueY) {
+        return valueX >= -4 && valueX <= 4 && valueY <= -3 && valueY <= 0;
     }
 }
 
