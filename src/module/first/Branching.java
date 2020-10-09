@@ -42,7 +42,7 @@ public class Branching {
         int minAB = compareForMin(a, b);
         int minCD = compareForMin(c, d);
         int result = Math.max(minAB, minCD); //тренировался через класс Match
-        System.out.println("2. Result module1 task2_2  MAX is: " + result);
+        System.out.println("2.Result module1 task2_2, MAX value is: " + result);
     }
 
     //тренировался, создал метод
@@ -59,7 +59,8 @@ public class Branching {
 Есть математическое выражение (x1 - x2) * (y1 - y3) == (x1 - x3) * (y1 - y2) если true---значит это линейная функция
 и три точки лежат на прямой
 
-Как реализовать? Можно класс с конструктором  и точками x,y...или массивы иксов, игриков.. но тут же  внутри метода...
+Как реализовать? Можно класс с конструктором  и точками (x,y)...или массивы иксов, игриков.. но тут вынесено  внутри
+ метода
 Прописал значения для true
 
          **/
@@ -71,14 +72,13 @@ public class Branching {
         int y2 = 1;
         int y3 = 4;
 
-        boolean result = (x1 - x2) * (y1 - y3) == (x1 - x3) * (y1 - y2);
-        System.out.println(result);
+        boolean compare = (x1 - x2) * (y1 - y3) == (x1 - x3) * (y1 - y2);
+        String result = compare == true ? " Точки расположены на одной прямой" : " Точки не расположены на одной прямой";
+
+        System.out.println("3.Result module1 task2_3: " + result);
 
 
     }
-
-
-
 
 
 }
