@@ -28,8 +28,10 @@ public class Branching {
 //5. Вычислить значение функции:
     }
 
+    /**
+     * Найти max{min(a, b), min(c, d)}.
+     */
     private static void task2_2() {
-        //            2. Найти max{min(a, b), min(c, d)}.
         int a = 15;
         int b = 20;
         int c = -15;
