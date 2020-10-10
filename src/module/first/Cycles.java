@@ -30,6 +30,9 @@ public class Cycles {
             sumNum += i;
         }
         System.out.println("1.Cумма чисел от 0 до " + num + " равна: " + sumNum);
+
+
+
     }
     /*
 
