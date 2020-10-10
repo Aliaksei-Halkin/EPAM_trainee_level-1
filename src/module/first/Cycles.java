@@ -5,12 +5,13 @@ import java.util.Scanner;
 
 public class Cycles {
     public static void main(String[] args) {
-        //task3_1();
-//        task3_2();
-//        task3_3();
-//        task3_4();
-//        task3_5();
+        task3_1();
+        task3_2();
+        task3_3();
+        task3_4();
+        task3_5();
         task3_6();
+        task3_7();
     }
 
     /*
@@ -128,9 +129,20 @@ http://comp-science.narod.ru/executants/images/vich/vca1.jpg
 7. Даны два числа. Определить цифры, входящие в запись как первого так и второго числа.
      */
     public static void task3_7() {
-
-
-
+        int a = 1254877;
+        int b = 133276674;
+        int[] arr = new int[10];
+        while (a != 0) {
+            arr[a % 10]++;
+            a /= 10;
+        }
+        while (b != 0) {
+            if (arr[b % 10] != 0)
+                System.out.print(b % 10 + " ");
+            b /= 10;
+        }
     }
-
 }
+
+
+
