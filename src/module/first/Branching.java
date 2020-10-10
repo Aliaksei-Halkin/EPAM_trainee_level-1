@@ -10,6 +10,7 @@ public class Branching {
         task2_2();
         task2_3();
         task2_4();
+        task2_5();
     }
 
     /*
@@ -97,14 +98,22 @@ public class Branching {
 
         if ((minSizeBrick1 < a || minSizeBrick1 < a) && (minSizeBrick2 < b || minSizeBrick2 < b)) {
 
-            System.out.println("4.Result module1 task2_3: кирпич проходит в отверстие");
+            System.out.println("4.Result module1 task2_4: кирпич проходит в отверстие");
         } else {
-            System.out.println("4.Result module1 task2_3: кирпич не проходит в отверстие");
+            System.out.println("4.Result module1 task2_4: кирпич не проходит в отверстие");
         }
     }
+    //5. Вычислить значение функции, (изображение на learn)
+
+    public static void task2_5() {
+        double x =2;
+        double result;
+        result = (x <= 3) ? Math.pow(x, 2) - 3 * x + 9 : 1 / (Math.pow(x, 3) + 6);
+        System.out.println("5.Result module1 task2_5: "+result);
+    }
+
 }
 
 
-//5. Вычислить значение функции:
 
 
