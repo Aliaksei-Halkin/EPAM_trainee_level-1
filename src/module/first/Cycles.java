@@ -5,6 +5,7 @@ import java.util.Scanner;
 public class Cycles {
     public static void main(String[] args) {
         task2_1();
+        task3_2();
 
     }
 
@@ -30,14 +31,17 @@ public class Cycles {
             sumNum += i;
         }
         System.out.println("1.Cумма чисел от 0 до " + num + " равна: " + sumNum);
-
     }
     /*
-
 2. Вычислить значения функции на отрезке [а,b] c шагом h:
-
 http://comp-science.narod.ru/executants/images/vich/vca1.jpg
+**/
+    public static void task3_2 () {
 
+
+    }
+
+        /*
 3. Найти сумму квадратов первых ста чисел.
 
 4. Составить программу нахождения произведения квадратов первых двухсот чисел.
