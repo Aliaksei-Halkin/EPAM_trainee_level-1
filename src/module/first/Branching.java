@@ -9,6 +9,7 @@ public class Branching {
         task1_1();
         task2_2();
         task2_3();
+        task2_4();
     }
 
     /*
@@ -80,11 +81,29 @@ public class Branching {
 
     }
 
+    /**
+     * 4. Заданы размеры А, В прямоугольного отверстия и размеры х, у, z кирпича. Определить, пройдет ли кирпич через
+     * <p>
+     * отверстие.
+     */
+    public static void task2_4() {
+        int a = 122;
+        int b = 90;
+        int x = 120;
+        int y = 250;
+        int z = 88;
+        int minSizeBrick1 = Math.min(x, y);
+        int minSizeBrick2 = Math.min(y, z);
 
+        if ((minSizeBrick1 < a || minSizeBrick1 < a) && (minSizeBrick2 < b || minSizeBrick2 < b)) {
+
+            System.out.println("4.Result module1 task2_3: кирпич проходит в отверстие");
+        } else {
+            System.out.println("4.Result module1 task2_3: кирпич не проходит в отверстие");
+        }
+    }
 }
 
-
-//4. Заданы размеры А, В прямоугольного отверстия и размеры х, у, z кирпича. Определить, пройдет ли кирпич через отверстие.
 
 //5. Вычислить значение функции:
 
