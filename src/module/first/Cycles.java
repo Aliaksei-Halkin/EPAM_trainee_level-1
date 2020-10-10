@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class Cycles {
     public static void main(String[] args) {
-        task2_1();
+        //task3_1();
         task3_2();
 
     }
@@ -14,7 +14,7 @@ public class Cycles {
     А программа суммирует все числа от 1 до введенного пользователем числа.
 
      */
-    public static void task2_1() {
+    public static void task3_1() {
         Scanner sc = new Scanner(System.in);
         int num;
         do {
@@ -32,13 +32,26 @@ public class Cycles {
         }
         System.out.println("1.Cумма чисел от 0 до " + num + " равна: " + sumNum);
     }
+
     /*
 2. Вычислить значения функции на отрезке [а,b] c шагом h:
 http://comp-science.narod.ru/executants/images/vich/vca1.jpg
 **/
-    public static void task3_2 () {
-
-
+    public static void task3_2() {
+        int x = 2;
+        int y=0;
+        int a = 0;
+        int b = 100;
+        int h = 2;
+        for (; a < b; a = a + h) {
+            if (x > 2) {
+                y = x;
+            } else {
+                y = -x;
+            }
+        }
+        //не понимаю условия, поэтому гн знаю как посчитать
+        //System.out.println(y);
     }
 
         /*
