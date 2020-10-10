@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class Cycles {
     public static void main(String[] args) {
-        task2_1();
+        task3_1();
 
     }
 
@@ -13,7 +13,7 @@ public class Cycles {
     А программа суммирует все числа от 1 до введенного пользователем числа.
 
      */
-    public static void task2_1() {
+    public static void task3_1() {
         Scanner sc = new Scanner(System.in);
         int num;
         do {
