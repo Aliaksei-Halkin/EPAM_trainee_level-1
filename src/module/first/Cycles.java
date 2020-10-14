@@ -45,17 +45,18 @@ http://comp-science.narod.ru/executants/images/vich/vca1.jpg
     public static void task3_2() {
         int x = 2;
         int y = 0;
-        int a = 0;
-        int b = 100;
+        int a = -10;
+        int leftBorder=a;
+        int b = 10;
         int h = 2;
-        for (; a < b; a = a + h) {
+        for (; leftBorder < b; leftBorder = leftBorder + h) {
             if (x > 2) {
                 y = x;
             } else {
                 y = -x;
             }
         }
-        System.out.println(y + " не понимаю условия, поэтому не знаю как посчитать");
+        System.out.println("Значения для y на промежутке [" +a+", "+ b+"] c шагом "+h +" : "+y);
     }
 
     /*
@@ -91,7 +92,7 @@ http://comp-science.narod.ru/executants/images/vich/vca1.jpg
     */
     public static void task3_5() {
         System.out.println("Задиние5:");
-        for (int i = 50; i <= 55; i++) {
+        for (int i = 33; i <= 40; i++) {
             char ch = (char) i;
             System.out.println("символ " + ch + " соответствует числу " + i);
         }
