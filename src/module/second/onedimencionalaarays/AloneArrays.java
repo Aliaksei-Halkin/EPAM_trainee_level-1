@@ -1,5 +1,7 @@
 package module.second.onedimencionalaarays;
 
+import java.util.Arrays;
+
 /**
  * 1. В массив A [N] занесены натуральные числа. Найти сумму тех элементов, которые кратны данному К.
  * <p>
@@ -30,11 +32,12 @@ package module.second.onedimencionalaarays;
  * 10. Дан целочисленный массив с количеством элементов п. Сжать массив, выбросив из него каждый второй элемент
  * (освободившиеся элементы заполнить нулями).
  */
-public class Arrays {
+public class AloneArrays {
 
 
     public static void main(String[] args) {
         task1_1();
+        task1_2();
     }
 
 
@@ -55,7 +58,23 @@ public class Arrays {
                 b++;
             }
         }
+        System.out.println(" ");
 
+    }
+
+    public static void task1_2() {
+
+        int z = 2;
+        int count = 0;
+        Integer[] arr = new Integer[]{8, 9, 0, -15, -18, 2, 25, 18, 5, 25, -35, -100};
+        System.out.println("2. Array"+Arrays.toString(arr));
+        for (int i = 0; i < arr.length; i++) {
+            if (arr[i] > z) {
+                arr[i] = z;
+                count++;
+            }
+        }
+        System.out.println("In result array consist of:"+ Arrays.toString(arr)+"\nNumber of count: "+count);
 
     }
 
