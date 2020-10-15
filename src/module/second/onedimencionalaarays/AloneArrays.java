@@ -38,6 +38,9 @@ public class AloneArrays {
     public static void main(String[] args) {
         task1_1();
         task1_2();
+        task1_3();
+        task1_4();
+
     }
 
 
@@ -67,16 +70,65 @@ public class AloneArrays {
         int z = 2;
         int count = 0;
         Integer[] arr = new Integer[]{8, 9, 0, -15, -18, 2, 25, 18, 5, 25, -35, -100};
-        System.out.println("2. Array"+Arrays.toString(arr));
+        System.out.println("2. Array" + Arrays.toString(arr));
         for (int i = 0; i < arr.length; i++) {
             if (arr[i] > z) {
                 arr[i] = z;
                 count++;
             }
         }
-        System.out.println("In result array consist of:"+ Arrays.toString(arr)+"\nNumber of count: "+count);
+        System.out.println("In result array consist of:" + Arrays.toString(arr) + "\nNumber of count: " + count);
 
     }
 
+    public static void task1_3() {
+
+        int z = 2;
+        int countNegativ = 0;
+        int countPositiv = 0;
+        int countZero = 0;
+        Integer[] arr = new Integer[]{8, 9, 0, -15, -18, 2, 25, 0, 5, 25, -35, -100};
+        System.out.println("3. Array" + Arrays.toString(arr));
+        for (int i = 0; i < arr.length; i++) {
+            if (arr[i] < 0) {
+                countNegativ++;
+            } else if (arr[i] > 0) {
+                countPositiv++;
+            } else {
+                countZero++;
+            }
+        }
+        System.out.println("Negativе number: " + countNegativ + "  Positivе number: " + countPositiv +
+                " Number of Zero: " + countZero);
+
+    }
+
+    public static void task1_4() {
+
+        int positionMaxNumberInArray = 0;
+        int positionMinNumberInArray = 0;
+        int numberTemp;
+        Integer[] arr = new Integer[]{8, 9, 0, -15, -18, 2, 5500, 0, 5, 15, -35, -1000};
+        System.out.println("4. Array" + Arrays.toString(arr));
+        int numberMax = arr[0];
+        int numberMin = arr[0];
+
+        for (int i = 0; i < arr.length; i++) {
+            if (numberMax < arr[i]) {
+                numberMax = arr[i];
+                positionMaxNumberInArray = i;
+            }
+            if (numberMin > arr[i]) {
+                numberMin = arr[i];
+                positionMinNumberInArray=i;
+            }
+        }
+        numberTemp=numberMax;
+        arr[positionMaxNumberInArray]=numberMin;
+        arr[positionMinNumberInArray]=numberTemp;
+
+        System.out.println("Result Array:" + Arrays.toString(arr));
+
+    }
 
 }
