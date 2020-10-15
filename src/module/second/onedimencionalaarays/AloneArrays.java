@@ -41,7 +41,26 @@ public class AloneArrays {
         task1_3();
         task1_4();
         task1_5();
+        //task 1-6
+        int[] arr = new int[]{3, 7, 0, -24, 11, 1, -14, 5, -100, 36, 13,709,719,-719};
+        System.out.print("6.простое число ");
+        for (int i = 0; i < arr.length; i++) {
+            if (primeNumber(arr[i]) == 1) {
+                System.out.print( arr[i] + " ");
+            }
+        }
+    }
 
+    private static int primeNumber(int number) {
+        for (int i = 2; i < number; i++) {
+            if (number % i == 0) {
+                return 0;
+            }
+            if ((i == number) || (i > Math.sqrt(number))) {
+                return 1;
+            }
+        }
+        return 0;
     }
 
 
@@ -138,12 +157,17 @@ public class AloneArrays {
         Integer[] arr = new Integer[]{8, 9, 0, -15, -18, 2, 25, 0, 5, 25, -35, -100};
         Integer[] resultArray = new Integer[arr.length];
         System.out.println("5. Array" + Arrays.toString(arr));
-        for (int i = 0, j=0; i < arr.length; i++) {
+        for (int i = 0, j = 0; i < arr.length; i++) {
             if (arr[i] > i) {
-               resultArray[j]=arr[i];
-               j++;
+                resultArray[j] = arr[i];
+                j++;
             }
         }
         System.out.println("Result Array:" + Arrays.toString(resultArray));
     }
+
+
 }
+
+
+
