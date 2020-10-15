@@ -40,6 +40,7 @@ public class AloneArrays {
         task1_2();
         task1_3();
         task1_4();
+        task1_5();
 
     }
 
@@ -120,15 +121,29 @@ public class AloneArrays {
             }
             if (numberMin > arr[i]) {
                 numberMin = arr[i];
-                positionMinNumberInArray=i;
+                positionMinNumberInArray = i;
             }
         }
-        numberTemp=numberMax;
-        arr[positionMaxNumberInArray]=numberMin;
-        arr[positionMinNumberInArray]=numberTemp;
+        numberTemp = numberMax;
+        arr[positionMaxNumberInArray] = numberMin;
+        arr[positionMinNumberInArray] = numberTemp;
 
         System.out.println("Result Array:" + Arrays.toString(arr));
 
     }
 
+    public static void task1_5() {
+
+
+        Integer[] arr = new Integer[]{8, 9, 0, -15, -18, 2, 25, 0, 5, 25, -35, -100};
+        Integer[] resultArray = new Integer[arr.length];
+        System.out.println("5. Array" + Arrays.toString(arr));
+        for (int i = 0, j=0; i < arr.length; i++) {
+            if (arr[i] > i) {
+               resultArray[j]=arr[i];
+               j++;
+            }
+        }
+        System.out.println("Result Array:" + Arrays.toString(resultArray));
+    }
 }
