@@ -19,7 +19,10 @@ import java.util.Arrays;
  * 6. Задана последовательность N вещественных чисел. Вычислить сумму чисел, порядковые номера которых являются простыми
  * числами.
  * <p>
- * 7. Даны действительные числа а1 ,а2 ,..., аn. Найти
+ * 7. Даны действительные числа а1 ,а2 ,..., аn. Найти....
+ * Здесь ошибка в условии задачи, наши ребята писали тем кто это разрабатывал...Они признали что есть ошибка,
+ * но умолчали что это плохо скопировано с джава раш)) https://javarush.ru/groups/posts/967-kukhnja-zadanie-n25
+ *
  * <p>
  * <p>
  * <p>
@@ -42,13 +45,15 @@ public class AloneArrays {
         task1_4();
         task1_5();
         //task 1-6
-        int[] arr = new int[]{3, 7, 0, -24, 11, 1, -14, 5, -100, 36, 13,709,719,-719};
+        int[] arr = new int[]{3, 7, 0, -24, 11, 1, -14, 5, -100, 36, 13, 709, 719, -719};
         System.out.print("6.простое число ");
         for (int i = 0; i < arr.length; i++) {
             if (primeNumber(arr[i]) == 1) {
-                System.out.print( arr[i] + " ");
+                System.out.print(arr[i] + " ");
             }
         }
+        System.out.println(" ");
+        task1_8();
     }
 
     private static int primeNumber(int number) {
@@ -166,7 +171,40 @@ public class AloneArrays {
         System.out.println("Result Array:" + Arrays.toString(resultArray));
     }
 
+    public static void task1_8() {
 
+
+        Integer[] arr = new Integer[]{8, 9, 0, -15, -100, 2, 25, 0, 5, -100, -35, -100};
+        System.out.println("8. Array" + Arrays.toString(arr));
+        int minNumber = 0;
+        for (int i = 0; i < arr.length; i++) {
+            if (arr[i] < minNumber) {
+                minNumber = arr[i];
+            }
+        }
+        for (int i = 0; i < arr.length; i++) {
+            if (arr[i] == minNumber) {
+                arr[i] = null;
+            }
+        }
+        System.out.println("Result Array:" + Arrays.toString(arr));
+    }
+
+    public static void task1_9() {
+
+
+        Integer[] arr = new Integer[]{8, 9, 8, 9, 8, 9, 8, 9, 8, 9, 0, -15, -100, 8, 25, 0, 5, 5, -35, -100};
+        System.out.println("8. Array" + Arrays.toString(arr));
+        int minNumber = 0;
+        for (int i = 0; i < arr.length; i++) {
+            if (arr[i] < minNumber) {
+                minNumber = arr[i];
+            }
+
+            System.out.println("Result Array:" + Arrays.toString(arr));
+        }
+
+    }
 }
 
 
