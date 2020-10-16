@@ -54,6 +54,7 @@ public class AloneArrays {
         }
         System.out.println(" ");
         task1_8();
+        task1_9();
     }
 
     private static int primeNumber(int number) {
@@ -192,19 +193,33 @@ public class AloneArrays {
 
     public static void task1_9() {
 
-
         Integer[] arr = new Integer[]{8, 9, 8, 9, 8, 9, 8, 9, 8, 9, 0, -15, -100, 8, 25, 0, 5, 5, -35, -100};
-        System.out.println("8. Array" + Arrays.toString(arr));
-        int minNumber = 0;
+        Integer[] arrayResult = new Integer[arr.length];
+        System.out.println("9. Array" + Arrays.toString(arr));
         for (int i = 0; i < arr.length; i++) {
-            if (arr[i] < minNumber) {
-                minNumber = arr[i];
+            int countI = arr[i];
+            int countJ = 0;
+
+            for (int j = 0; j < arr.length; j++) {
+
+                if (arr[j] == countI) {
+                    countJ++;
+                }
+                arrayResult[i] = countJ;
             }
-
-            System.out.println("Result Array:" + Arrays.toString(arr));
         }
-
+        int numderMax = 0;
+        int counterMax=0;
+        for (int i = 0; i < arr.length; i++) {
+            if (numderMax < arrayResult[i]) {
+                numderMax=arrayResult[i];
+                counterMax++;
+            }
+        }
+        System.out.println("The most repeated number is " + arr[numderMax]+ ". it is repeated "+ numderMax+
+                " times.");
     }
+
 }
 
 
