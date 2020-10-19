@@ -223,7 +223,7 @@ public class AloneArrays {
 
     public static void task1_10() {
 
-        Integer[] arr = new Integer[]{8, 9, 8, 9, 8, 9, 8, 9, 8, 9, 1, -15, -100, 8, 25, 0, 5, 5, -35, -100};
+        Integer[] arr = new Integer[]{8, 9, 8, 9, 8, 9, 8, 9, 8, 9, 0, -15, -100, 8, 25, 0, 5, 5, -35, -100};
 
         System.out.println("10. Array" + Arrays.toString(arr));
         for (int i = 1; i < arr.length; i += 2) {
