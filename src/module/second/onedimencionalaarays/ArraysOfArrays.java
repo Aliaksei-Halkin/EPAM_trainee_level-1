@@ -57,7 +57,7 @@ public class ArraysOfArrays {
                 System.out.printf("%d ", arr[i][j]);
             }
             System.out.println();
-
+5584658
         }
         System.out.println(Arrays.deepToString(arr));
        // task2_1();
