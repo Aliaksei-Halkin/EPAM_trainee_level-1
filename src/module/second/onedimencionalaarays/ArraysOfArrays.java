@@ -58,6 +58,7 @@ public class ArraysOfArrays {
             }
             System.out.println();
 12345678
+5584658
         }
         System.out.println(Arrays.deepToString(arr));
        // task2_1();
