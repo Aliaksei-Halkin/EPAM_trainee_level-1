@@ -46,17 +46,17 @@ http://comp-science.narod.ru/executants/images/vich/vca1.jpg
         int x = 2;
         int y = 0;
         int a = -10;
-        int leftBorder=a;
+
         int b = 10;
         int h = 2;
-        for (; leftBorder < b; leftBorder = leftBorder + h) {
+        for (int leftBorder = a; leftBorder < b; leftBorder = leftBorder + h) {
             if (x > 2) {
                 y = x;
             } else {
                 y = -x;
             }
         }
-        System.out.println("Значения для y на промежутке [" +a+", "+ b+"] c шагом "+h +" : "+y);
+        System.out.println("Значения для y на промежутке [" + a + ", " + b + "] c шагом " + h + " : " + y);
     }
 
     /*
@@ -75,11 +75,8 @@ http://comp-science.narod.ru/executants/images/vich/vca1.jpg
 */
     public static void task3_4() {
         long multiply = 1;
-        // BigInteger a = BigInteger.valueOf(1);
-        // BigInteger b = null;
         for (int i = 1; i < 200; i++) {
             multiply *= Math.pow(i, 2);
-            //     b =a.multiply(BigInteger.valueOf((int)Math.pow(i,2)));
         }
         System.out.println("4.Произведение квадратов первых двухста чисел(c long) " + multiply + " Но тут возможно" +
                 "ошибка, переполнение  памяти *лонга* и надо использовать BigInteger");
@@ -116,15 +113,15 @@ http://comp-science.narod.ru/executants/images/vich/vca1.jpg
         for (; m <= n; m++) {//сдесь переьираем числа из промежутка
 
             for (int j = 2; j <= 10; j++) {// проверяем на какие числа делятся от 2 до 10
-                if (m % j == 0) {
-                    if (m == j) {//исключение деления на самого себя
-                    } else {
-                        System.out.println("Число " + m + " делится на " + j);
-                    }
+                if (m % j == 0 && m == j) {
+                } else {
+                    System.out.println("Число " + m + " делится на " + j);
                 }
             }
         }
     }
+
+
 
     /*
 7. Даны два числа. Определить цифры, входящие в запись как первого так и второго числа.

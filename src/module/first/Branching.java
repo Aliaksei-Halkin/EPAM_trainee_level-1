@@ -1,11 +1,8 @@
 package module.first;
 
-import java.sql.PreparedStatement;
-import java.util.Scanner;
-
 public class Branching {
+   public static final int SUM_ANGLES = 180;
     public static void main(String[] args) {
-//    .
         task1_1();
         task2_2();
         task2_3();
@@ -20,13 +17,13 @@ public class Branching {
     private static void task1_1() {
         int angle1 = 60;
         int angle2 = 30;
-        final int SUM_ANGLES = 180;//сумма углов треугольника всегда равна 180 гр
+
         int angle3 = SUM_ANGLES - angle1 - angle2;
 
         if (angle1 + angle2 < 180) {
             System.out.print("1.Result module1 task2_1: треугольник существует");
-            if (angle1 == 90 | angle2 == 90 | angle3 == 90) {  //лучше | или || ?
-                System.out.println(", треуголник прямоугольный"); // так корректно выводить?
+            if (angle1 == 90 || angle2 == 90 || angle3 == 90) {
+                System.out.println(", треуголник прямоугольный");
             }
         } else {
             System.out.println("1.Result module1 task2_1: треугольник не существует");
@@ -75,7 +72,7 @@ public class Branching {
         int y3 = 4;
 
         boolean compare = (x1 - x2) * (y1 - y3) == (x1 - x3) * (y1 - y2);
-        String result = compare == true ? " Точки расположены на одной прямой" : " Точки не расположены на одной прямой";
+        String result = compare  ? " Точки расположены на одной прямой" : " Точки не расположены на одной прямой";
 
         System.out.println("3.Result module1 task2_3: " + result);
 
@@ -107,8 +104,7 @@ public class Branching {
 
     public static void task2_5() {
         double x =2;
-        double result;
-        result = (x <= 3) ? Math.pow(x, 2) - 3 * x + 9 : 1 / (Math.pow(x, 3) + 6);
+        double result = (x <= 3) ? Math.pow(x, 2) - 3 * x + 9 : 1 / (Math.pow(x, 3) + 6);
         System.out.println("5.Result module1 task2_5: "+result);
     }
 

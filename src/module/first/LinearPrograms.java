@@ -27,8 +27,7 @@ public class LinearPrograms {
         System.out.println("2. Result LinearPrograms task2 с округлением: " + bd);
 
 
-        //System.out.println(Math.pow(2,-2));  0.25
-        //System.out.println(1/Math.pow(2,2));  0.25
+
 
 //3. Вычислить значение выражения по формуле (все переменные принимают действительные значения):
         int x = 8;
@@ -57,9 +56,7 @@ public class LinearPrograms {
         int hours = (int) ((t - seconds) / 60 / 60);
 
         System.out.println("5. Result LinearPrograms task5: " + hours + "ч " + minutes + "мин " + seconds + "c");
-//        System.out.println("5. Result LinearPrograms task5: " + seconds);
-//        System.out.println("5. Result LinearPrograms task5: " + minutes);
-//        System.out.println("5. Result LinearPrograms task5: " + hours);
+
 
 
 //6. Для данной области составить линейную программу, которая печатает true, если точка с координатами (х, у)
@@ -67,7 +64,7 @@ public class LinearPrograms {
         int valueX = 1; //координата точки Х
         int valueY = 1;//координата точки Y
         boolean result6 = compare(valueX, valueY);
-        //System.out.println(result6);
+
         if (result6) {
             System.out.println("6. Result LinearPrograms task6: точка принадлежит области");
         } else {
