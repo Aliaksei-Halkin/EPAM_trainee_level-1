@@ -1,6 +1,7 @@
 package module.second.onedimencionalaarays;
 
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.Scanner;
 
 /**
@@ -52,7 +53,7 @@ public class ArraysOfArrays {
                 {77, 1, 4, 12},
                 {3, 4, 5, 25},
                 {6, 7, 8, 14},
-                {74, -5, 99, -44}
+                {74, 2, 99, 2}
         };
         System.out.println("Исходный массив:");
         for (int i = 0; i < arr.length; i++) {
@@ -69,8 +70,14 @@ public class ArraysOfArrays {
         task2_5();
         task2_6();
         task2_7();
-        task2_8();
-
+        // task2_8();
+        task2_9(arr);
+        task2_10();
+        task2_11();
+        task2_12(arr);
+        task2_13(arr);
+        task2_14();
+        task2_15(arr);
 
     }
 
@@ -156,7 +163,6 @@ public class ArraysOfArrays {
             System.out.println(Arrays.toString(arr[i]));
             counter--;
         }
-        //   System.out.println(Arrays.deepToString(arr));
 
 
     }
@@ -213,16 +219,169 @@ public class ArraysOfArrays {
         }
         for (int i = 0; i < arr.length; i++) {
 
-               int tempNumber=arr[i][column1-1];
-               arr[i][column1-1]=arr[i][column2-1];
-               arr[i][column2-1]=tempNumber;
-
+            int tempNumber = arr[i][column1 - 1];
+            arr[i][column1 - 1] = arr[i][column2 - 1];
+            arr[i][column2 - 1] = tempNumber;
 
             System.out.println(Arrays.toString(arr[i]));
         }
+    }
 
+
+    private static void task2_9(Integer[][] array) {
+        int maxSum = 0;
+        int indexColumn = -1;
+        int[] sumArray = new int[array.length];
+        for (int i = 0; i < array.length; i++) {
+            for (int j = 0; j < array.length; j++) {
+                sumArray[j] += array[i][j];
+            }
+        }
+        System.out.println("10. Суммы элементов по столбцам: " + Arrays.toString(sumArray));
+        for (int i = 0; i < sumArray.length; i++) {
+            if (sumArray[i] > maxSum) {
+                maxSum = sumArray[i];
+                indexColumn = i;
+            }
+        }
+        System.out.println("Максимальное значение суммы " + maxSum + " находится в столбце № " + indexColumn + 1);
+    }
+
+    private static void task2_10() {
+        int[][] array = new int[4][4];
+        for (int i = 0; i < array.length; i++) {
+            for (int j = 0; j < array.length; j++) {
+                array[i][j] = (int) (Math.random() * 100 - 50);
+            }
+        }
+
+        System.out.println("11. Дана матрица" + Arrays.deepToString(array) +
+                "\nположительные элементы главной диагонали:");
+        for (int i = 0; i < array.length; i++) {
+            for (int j = 0; j < array.length; j++) {
+                if (i == j && array[i][j] > 0) {
+                    System.out.print(array[i][j] + " ");
+                }
+            }
+        }
+        System.out.println();
+    }
+
+    private static void task2_11() {
+        int[][] array = new int[10][20];
+        int[] counterFive = new int[array.length];
+        for (int i = 0; i < array.length; i++) {
+            for (int j = 0; j < array[i].length; j++) {
+                array[i][j] = (int) (Math.random() * 10);
+                if (array[i][j] == 5) {
+                    counterFive[i] += 1;
+                }
+            }
+            System.out.println(Arrays.toString(array[i]));
+        }
+        for (int i = 0; i < counterFive.length; i++) {
+            if (counterFive[i] >= 3) {
+                System.out.println("Число пять встречается в строках " + i);
+            }
+        }
 
     }
+
+
+    public static void task2_12(Integer array[][]) {
+        System.out.println("cортировка строк по возрастанию");
+        for (int i = 0; i < array.length; i++) {
+            Arrays.sort(array[i]);
+            System.out.println(Arrays.toString(array[i]));
+        }
+        for (int i = 0; i < array.length; i++) {
+            Arrays.sort(array[i], Collections.reverseOrder());
+            System.out.println(Arrays.toString(array[i]));
+        }
+
+    }
+
+    public static void task2_13(Integer array[][]) {
+        System.out.println("11 cортировка стобцов массива");
+        for (int i = 0; i < array.length; i++) {
+            System.out.println(Arrays.toString(array[i]));
+        }
+
+        for (int sizeArray = 0; sizeArray < array.length; sizeArray++) {
+            for (int i = 0; i < array.length; i++) {
+                for (int j = 0; j < array[i].length; j++) {
+                    if (i < array[i].length - 1 && array[i][j] < array[i + 1][j]) {
+                        int tempNumber = array[i][j];
+                        array[i][j] = array[i + 1][j];
+                        array[i + 1][j] = tempNumber;
+                    }
+                }
+            }
+        }
+        System.out.println("результат сортировки по уьыванию: ");
+        for (int i = 0; i < array.length; i++) {
+            System.out.println(Arrays.toString(array[i]));
+        }
+
+        for (int sizeArray = 0; sizeArray < array.length; sizeArray++) {
+            for (int i = 0; i < array.length; i++) {
+                for (int j = 0; j < array[i].length; j++) {
+
+                    if (i < array[i].length - 1 && array[i][j] > array[i + 1][j]) {
+                        int tempNumber = array[i][j];
+                        array[i][j] = array[i + 1][j];
+                        array[i + 1][j] = tempNumber;
+                    }
+                }
+            }
+        }
+        System.out.println("результат сортировки по возрастанию: ");
+        for (int i = 0; i < array.length; i++) {
+            System.out.println(Arrays.toString(array[i]));
+        }
+    }
+//Сформировать случайную матрицу m x n, состоящую из нулей и единиц, причем в каждом столбце число единиц равно
+// * номеру столбца.
+
+    static void task2_14() {
+        int sizeM = (int) (Math.random() * 10);
+        int counter = sizeM - 1;
+        int[][] array = new int[sizeM][sizeM];
+        for (int i = 0; i < array.length; i++) {
+            for (int j = 0; j < array[i].length; j++) {
+                if (j >= counter) {
+                    array[i][j] = 1;
+                }
+            }
+            counter--;
+        }
+        System.out.println("заполнение нулями и единицами:");
+        for (int i = 0; i < array.length; i++) {
+            System.out.println(Arrays.toString(array[i]));
+        }
+    }
+
+    //Найдите наибольший элемент матрицы и заменить все нечетные элементы на него.
+    static void task2_15(Integer[][]array) {
+        int maxNumber=array[0][0];
+        for (int i = 0; i < array.length; i++) {
+            for (int j = 0; j < array[i].length; j++) {
+                if(array[i][j]>maxNumber){
+                    maxNumber=array[i][j];
+                }
+            }
+        }
+        for (int i = 0; i < array.length; i++) {
+            for (int j = 0; j < array[i].length; j++) {
+                if(array[i][j]%2!=0){
+                    array[i][j]=maxNumber;
+                }
+            }
+        }
+        System.out.println("15. результат замены нечетных на максимальное значение: ");
+        for (int i = 0; i < array.length; i++) {
+            System.out.println(Arrays.toString(array[i]));
+        }
+    }
+
 }
-
-
