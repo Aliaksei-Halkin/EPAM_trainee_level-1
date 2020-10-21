@@ -55,6 +55,7 @@ public class ArraysOfArrays {
                 {6, 7, 8, 14},
                 {74, 2, 99, 2}
         };
+
         System.out.println("Исходный массив:");
         for (int i = 0; i < arr.length; i++) {
             for (int j = 0; j < arr[i].length; j++) {
@@ -382,6 +383,7 @@ public class ArraysOfArrays {
         for (int i = 0; i < array.length; i++) {
             System.out.println(Arrays.toString(array[i]));
         }
+
     }
 
 }
