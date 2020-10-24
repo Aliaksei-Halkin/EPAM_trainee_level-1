@@ -295,10 +295,10 @@ public class ArraysOfArrays {
             Arrays.sort(array[i]);
             System.out.println(Arrays.toString(array[i]));
         }
-        for (int i = 0; i < array.length; i++) {
-            Arrays.sort(array[i], Collections.reverseOrder());
-            System.out.println(Arrays.toString(array[i]));
-        }
+          for (int i = 0; i < array.length; i++) {
+         Arrays.sort(array[i], Collections.reverseOrder());
+             System.out.println(Arrays.toString(array[i]));
+         }
 
     }
 
@@ -363,19 +363,19 @@ public class ArraysOfArrays {
     }
 
     //Найдите наибольший элемент матрицы и заменить все нечетные элементы на него.
-    static void task2_15(Integer[][]array) {
-        int maxNumber=array[0][0];
+    static void task2_15(Integer[][] array) {
+        int maxNumber = array[0][0];
         for (int i = 0; i < array.length; i++) {
             for (int j = 0; j < array[i].length; j++) {
-                if(array[i][j]>maxNumber){
-                    maxNumber=array[i][j];
+                if (array[i][j] > maxNumber) {
+                    maxNumber = array[i][j];
                 }
             }
         }
         for (int i = 0; i < array.length; i++) {
             for (int j = 0; j < array[i].length; j++) {
-                if(array[i][j]%2!=0){
-                    array[i][j]=maxNumber;
+                if (array[i][j] % 2 != 0) {
+                    array[i][j] = maxNumber;
                 }
             }
         }
@@ -383,7 +383,5 @@ public class ArraysOfArrays {
         for (int i = 0; i < array.length; i++) {
             System.out.println(Arrays.toString(array[i]));
         }
-
     }
-
 }
