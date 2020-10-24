@@ -16,6 +16,7 @@ import java.util.Arrays;
  * 5. Реализуйте сортировку Шелла.
  */
 public class Sorting {
+    static int[] arraySecondForTask4 = new int[]{8,15,-4,0,16,-20};
     public static void main(String[] args) {
         int[] arrayFirst = new int[10];
 
@@ -78,7 +79,7 @@ public class Sorting {
 
     }
 
-    static void task3_3(int[] anyArray) {
+   protected static void task3_3(int[] anyArray) {
         System.out.println("3. ИСходный массив " + Arrays.toString(anyArray));
         boolean sorted = false;
         while (!sorted) {

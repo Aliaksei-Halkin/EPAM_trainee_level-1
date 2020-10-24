@@ -1,5 +1,7 @@
 package module.second.onedimencionalaarays;
 
+import java.util.Arrays;
+
 /**
  * 1.Написать метод(методы) для нахождения наибольшего общего делителя и наименьшего общего кратного двух
  * натуральных чисел:
@@ -64,7 +66,10 @@ public class Methods {
                 {-15, 20, 0, 12, 3, -8, 5},
                 {5, 12, 8, -15, -7, 0, 1}
         };
-        System.out.println("4.4 Наибольшее расстояние меджду точками " + task4_4(arr));
+        System.out.println("4.4 Наибольшее расстояние меджду точками " + task4_4(arr) + " (но мне не нравиться это решение" +
+                ", не могу понять как сравнить абсолютно все точки");
+        System.out.println("4.5 ");
+        System.out.println("Предмаксимальный элемент равен " + task4_5(Sorting.arraySecondForTask4));
 
 
     }
@@ -107,5 +112,18 @@ public class Methods {
         }
 
         return maxValue;
+    }
+
+    static int task4_5(int[] array) {
+        Sorting.task3_3(array);
+        int numMax = array[0];
+        int bufer = 0;
+        for (int i = 1; i < array.length; i++) {
+            if (array[i] > numMax) {
+                bufer = numMax;
+                numMax = array[i];
+            }
+        }
+        return bufer;
     }
 }
