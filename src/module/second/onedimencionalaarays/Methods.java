@@ -88,13 +88,12 @@ public class Methods {
         int numY = 45;
         int numZ = 25;
         int numT = 30;
-        System.out.println("4.9 Squere of a quadrangle  "+squareForBraxmagupta (numT, numX, numY, numZ));
-
+        System.out.println("4.9 Squere of a quadrangle  " + squareForBraxmagupta(numT, numX, numY, numZ));
+        //4.10
+        int number = 125892546;
+        System.out.println("4.10 Array numbers from number  "+Arrays.toString(fillArrayNumbers(number)));
     }
 
-//    static  void print(var... value) {
-//        System.out.println(value);
-//    }
 
     public static int task4_1Gcd(int a, int b) {
         while (b != 0) {
@@ -205,8 +204,8 @@ public class Methods {
 
     static double squareForBraxmagupta(int x, int y, int z, int t) {
         int squere;
-        int halfPerimetr = halfPerimetr(x,y,z,t);
-        double square=Math.sqrt((halfPerimetr-x)*(halfPerimetr-y)*(halfPerimetr-z)*(halfPerimetr-t));
+        int halfPerimetr = halfPerimetr(x, y, z, t);
+        double square = Math.sqrt((halfPerimetr - x) * (halfPerimetr - y) * (halfPerimetr - z) * (halfPerimetr - t));
         return square;
     }
 
@@ -215,7 +214,23 @@ public class Methods {
         for (int i = 0; i < num.length; i++) {
             result += num[i];
         }
-        return result/2;
+        return result / 2;
+    }
 
+    static int[] fillArrayNumbers(int num) {
+        int[] arr = new int[sizeArray(num)];
+       //сдесь прикольная штука, число num склонировано в метод и в памяти его изменяю
+        for (int i = 0; i < arr.length; i++) {
+            if (num != 0) {
+                arr[i] = num % 10;
+                num/=10;
+            }
+        }
+
+        return arr;
+    }
+
+    static int sizeArray(int num) {
+        return Integer.toString(num).length();
     }
 }
