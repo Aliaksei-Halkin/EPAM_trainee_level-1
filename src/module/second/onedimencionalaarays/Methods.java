@@ -68,8 +68,15 @@ public class Methods {
         };
         System.out.println("4.4 Наибольшее расстояние меджду точками " + task4_4(arr) + " (но мне не нравиться это решение" +
                 ", не могу понять как сравнить абсолютно все точки");
-        System.out.println("4.5 ");
+        System.out.println("4.5 решение: ");
         System.out.println("Предмаксимальный элемент равен " + task4_5(Sorting.arraySecondForTask4));
+
+        //4.6
+        int numberOneForTask6 = 3;
+        int numberTwoForTask6 = 47;
+        int numberThreeForTask6 = 79;
+        System.out.println("4.6 Compare result: "+compareIfTheySimple(numberOneForTask6,numberThreeForTask6,numberTwoForTask6));
+
 
 
     }
@@ -114,7 +121,11 @@ public class Methods {
         return maxValue;
     }
 
+    void test() {
+    }
+
     static int task4_5(int[] array) {
+
         Sorting.task3_3(array);
         int numMax = array[0];
         int bufer = 0;
@@ -125,5 +136,28 @@ public class Methods {
             }
         }
         return bufer;
+    }
+
+    private static int primeNumber(int number) {
+        for (int i = 2; i < number; i++) {
+            if (number % i == 0) {
+                return 0;
+            }
+            if ((i == number) || (i > Math.sqrt(number))) {
+                return 1;
+            }
+        }
+        return 0;
+    }
+
+    private static String compareIfTheySimple(int numA, int numB, int numC) {
+        if (primeNumber(numA) == 1 &&
+                primeNumber(numB) == 1 &&
+                primeNumber(numC) == 1) {
+            return "Three numbers are simple!";
+        } else {
+            return "Three numbers aren't simple";
+        }
+
     }
 }
