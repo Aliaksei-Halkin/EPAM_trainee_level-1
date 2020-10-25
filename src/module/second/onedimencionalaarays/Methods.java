@@ -55,6 +55,8 @@ import java.util.Arrays;
  * надо произвести, чтобы получился нуль? Для решения задачи использовать декомпозицию.
  */
 public class Methods {
+
+
     public static void main(String[] args) {
         int a = 15;
         int b = 100;
@@ -75,12 +77,24 @@ public class Methods {
         int numberOneForTask6 = 3;
         int numberTwoForTask6 = 47;
         int numberThreeForTask6 = 79;
-        System.out.println("4.6 Compare result: "+compareIfTheySimple(numberOneForTask6,numberThreeForTask6,numberTwoForTask6));
-
-
+        System.out.println("4.6 Compare result: " + compareIfTheySimple(numberOneForTask6, numberThreeForTask6, numberTwoForTask6));
+        //4.7
+        System.out.println("4.7 Sum factorials of odd numbers befor 9:  " + sumFactorial(9));
+        //4.8
+        int[] array = new int[]{0, 1, 2, 3, 4, 5, 6,};
+        System.out.println("4.8 Sum third number triple:  " + sumElementsOfArray(array));
+        //4.9
+        int numX = 10;
+        int numY = 45;
+        int numZ = 25;
+        int numT = 30;
+        System.out.println("4.9 Squere of a quadrangle  "+squareForBraxmagupta (numT, numX, numY, numZ));
 
     }
 
+//    static  void print(var... value) {
+//        System.out.println(value);
+//    }
 
     public static int task4_1Gcd(int a, int b) {
         while (b != 0) {
@@ -158,6 +172,50 @@ public class Methods {
         } else {
             return "Three numbers aren't simple";
         }
+    }
+
+    static int factirialRecursionMethod(int num) {
+        if (num == 0) {
+            return 1;
+        }
+        return num * factirialRecursionMethod(num - 1);
+    }
+
+    static int sumFactorial(int num) {
+        int result = 0;
+        for (int i = 1; i <= num; i = i + 2) {
+            result += factirialRecursionMethod(i);
+        }
+        return result;
+    }
+
+    private static int sumElementsOfArray(int[] arr) {
+        int sumCounter = 0;
+        int index = 0;
+        for (int i = 1; i < 5; i += 2) {
+            sumCounter += arr[i] + arr[i + 1] + arr[i + 2];
+            index = i;
+        }
+        for (int i = index + 1; i < arr.length; i += 3) {
+            sumCounter += arr[i] + arr[i + 1] + arr[i + 2];
+        }
+
+        return sumCounter;
+    }
+
+    static double squareForBraxmagupta(int x, int y, int z, int t) {
+        int squere;
+        int halfPerimetr = halfPerimetr(x,y,z,t);
+        double square=Math.sqrt((halfPerimetr-x)*(halfPerimetr-y)*(halfPerimetr-z)*(halfPerimetr-t));
+        return square;
+    }
+
+    static int halfPerimetr(int... num) {
+        int result = 0;
+        for (int i = 0; i < num.length; i++) {
+            result += num[i];
+        }
+        return result/2;
 
     }
 }
