@@ -91,7 +91,14 @@ public class Methods {
         System.out.println("4.9 Squere of a quadrangle  " + squareForBraxmagupta(numT, numX, numY, numZ));
         //4.10
         int number = 125892546;
-        System.out.println("4.10 Array numbers from number  "+Arrays.toString(fillArrayNumbers(number)));
+        System.out.println("4.10 Array numbers from number  " + Arrays.toString(fillArrayNumbers(number)));
+        //4.11
+        int num1 = 125;
+        int num2 = 1013;
+        System.out.println("4.11 Greater length from Number: "+ compareLength(num1,num2));
+
+
+
     }
 
 
@@ -219,18 +226,24 @@ public class Methods {
 
     static int[] fillArrayNumbers(int num) {
         int[] arr = new int[sizeArray(num)];
-       //сдесь прикольная штука, число num склонировано в метод и в памяти его изменяю
+        //сдесь прикольная штука, число num склонировано в метод и в памяти его изменяю
         for (int i = 0; i < arr.length; i++) {
             if (num != 0) {
                 arr[i] = num % 10;
-                num/=10;
+                num /= 10;
             }
         }
-
         return arr;
     }
 
     static int sizeArray(int num) {
         return Integer.toString(num).length();
     }
+   static String compareLength(int num1,int num2){
+        if(sizeArray(num1)>sizeArray(num2)){
+            return "num1";
+        }else {
+            return "num2";
+        }
+   }
 }
