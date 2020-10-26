@@ -100,8 +100,26 @@ public class Methods {
         int numK = 10;
         int numN = 20;
         System.out.println("4.12 Creating array: " + Arrays.toString(createArray(numK, numN)));
+        //4.13
+        int n = 20;
+        System.out.println("4.13 Numbers: ");
+        searchNumbers(n);
+        System.out.println();
+        //4,14
+        int k = 9999;
+        System.out.println("4.14 Numbers of Armstrong: ");
+        for (int i = 1; i <= k; i++) {
+            pereborNumbers(i);
+            System.out.println();
 
-
+        }
+//        //4.15
+//        int aN = 125;
+//        for (int i = 1; i <= k; i++) {
+//            System.out.println("4.15 Numbers sort: ");
+//            searchNumber(getArray(i));
+//
+//        }
     }
 
 
@@ -144,8 +162,6 @@ public class Methods {
         return maxValue;
     }
 
-    void test() {
-    }
 
     static int task4_5(int[] array) {
 
@@ -256,11 +272,11 @@ public class Methods {
         if (bufferNum < 10) {
             int m = num1 - bufferNum;
             return Integer.parseInt(String.valueOf(m) + String.valueOf(bufferNum));
-        } else if (bufferNum > 10) {
+        } else if (bufferNum > 10 && bufferNum < num) {
             int m2 = bufferNum % 10;
             return Integer.parseInt(String.valueOf(m2) + String.valueOf(num1 - m2));
-        }else {
-            int m3=bufferNum/10;
+        } else {
+            int m3 = bufferNum / 10;
             int m = num1 - m3;
             return Integer.parseInt(String.valueOf(m) + String.valueOf(m3));
         }
@@ -270,10 +286,85 @@ public class Methods {
     static Integer[] createArray(int num1, int num) {
         Integer[] arr = new Integer[10];
         for (int i = 0; i < arr.length; i++) {
-            arr[i] = creatingNumbers(num1,  num);
+            arr[i] = creatingNumbers(num1, num);
         }
         return arr;
     }
 
+    static void searchNumbers(int n) {
+        int bufer = n;
+        for (int i = bufer; i < 2 * n - 2; i++) {
+            print(i);
+            print(i + 2);
+        }
+    }
+
+    static void print(int i) {
+        System.out.printf("%5d", i);
+    }
+
+    static void pereborNumbers(int k) {
+        if (k == searchArmstrong(getArray(k))) {
+            System.out.printf("%5d", k);
+        }
+    }
+
+    public static int[] getArray(int i) {
+        int[] array = new int[lengthNumber(i)];
+        int counter = lengthNumber(i) - 1;
+        while (i != 0) {
+            array[counter] = i % 10;
+            i /= 10;
+            counter--;
+        }
+
+        return array;
+    }
+
+    public static int lengthNumber(int a) {
+
+        int b = 0;
+        while (a >= 1) {
+            b++;
+            a /= 10;
+        }
+        return b;
+    }
+
+    public static int searchArmstrong(int[] arr) {
+        int sum = 0;
+        for (int i = 0; i < arr.length; i++) {
+            sum += Math.pow(arr[i], arr.length);
+        }
+        return sum;
+    }
+
+//    public static void searchNumber(int[] arr) {
+//        int result = 0;
+//        for (int i = 0; i < arr.length; i++) {
+//            switch (arr.length) {
+//                case 2: {
+//                    if (arr[i] + 1 == arr[i + 1]) {
+//                        print(result);
+//                    }
+//                    break;
+//                }
+//                case 3:{
+//                    if (arr[i] + 1 == arr[i + 1] && arr[i] + 2 == arr[i + 2]) {
+//                        print(result);
+//                    }
+//                    break;}
+//                case 4:
+//                { if (arr[i] + 1 == arr[i + 1] && arr[i + 1] + 1 == arr[i + 2] && arr[i + 2] + 1 == arr[i + 3]) {
+//                        print(result);
+//                    }
+//                    break;}
+//
+//            }
+//
+//        }
+//    }
+
 
 }
+
