@@ -95,8 +95,11 @@ public class Methods {
         //4.11
         int num1 = 125;
         int num2 = 1013;
-        System.out.println("4.11 Greater length from Number: "+ compareLength(num1,num2));
-
+        System.out.println("4.11 Greater length from Number: " + compareLength(num1, num2));
+        //4.12
+        int numK = 10;
+        int numN = 20;
+        System.out.println("4.12 Creating array: " + Arrays.toString(createArray(numK, numN)));
 
 
     }
@@ -226,7 +229,7 @@ public class Methods {
 
     static int[] fillArrayNumbers(int num) {
         int[] arr = new int[sizeArray(num)];
-        //сдесь прикольная штука, число num склонировано в метод и в памяти его изменяю
+        //здесь прикольная штука, число num склонировано в метод и в памяти его изменяю
         for (int i = 0; i < arr.length; i++) {
             if (num != 0) {
                 arr[i] = num % 10;
@@ -239,11 +242,38 @@ public class Methods {
     static int sizeArray(int num) {
         return Integer.toString(num).length();
     }
-   static String compareLength(int num1,int num2){
-        if(sizeArray(num1)>sizeArray(num2)){
+
+    static String compareLength(int num1, int num2) {
+        if (sizeArray(num1) > sizeArray(num2)) {
             return "num1";
-        }else {
+        } else {
             return "num2";
         }
-   }
+    }
+
+    static Integer creatingNumbers(int num1, int num) {
+        int bufferNum = (int) (Math.random() * num);
+        if (bufferNum < 10) {
+            int m = num1 - bufferNum;
+            return Integer.parseInt(String.valueOf(m) + String.valueOf(bufferNum));
+        } else if (bufferNum > 10) {
+            int m2 = bufferNum % 10;
+            return Integer.parseInt(String.valueOf(m2) + String.valueOf(num1 - m2));
+        }else {
+            int m3=bufferNum/10;
+            int m = num1 - m3;
+            return Integer.parseInt(String.valueOf(m) + String.valueOf(m3));
+        }
+    }
+
+
+    static Integer[] createArray(int num1, int num) {
+        Integer[] arr = new Integer[10];
+        for (int i = 0; i < arr.length; i++) {
+            arr[i] = creatingNumbers(num1,  num);
+        }
+        return arr;
+    }
+
+
 }
