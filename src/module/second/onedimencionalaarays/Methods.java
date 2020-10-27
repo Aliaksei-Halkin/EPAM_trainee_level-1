@@ -110,16 +110,15 @@ public class Methods {
         System.out.println("4.14 Numbers of Armstrong: ");
         for (int i = 1; i <= k; i++) {
             pereborNumbers(i);
-            System.out.println();
-
         }
-//        //4.15
-//        int aN = 125;
-//        for (int i = 1; i <= k; i++) {
-//            System.out.println("4.15 Numbers sort: ");
-//            searchNumber(getArray(i));
-//
-//        }
+        System.out.println();
+
+        //4.15
+        int aN = 10000;
+        System.out.println("4.15 Numbers sort: ");
+        for (int i = 1; i <= aN; i++) {
+            getArrayOfNumber(i);
+        }
     }
 
 
@@ -309,12 +308,12 @@ public class Methods {
         }
     }
 
-    public static int[] getArray(int i) {
-        int[] array = new int[lengthNumber(i)];
-        int counter = lengthNumber(i) - 1;
-        while (i != 0) {
-            array[counter] = i % 10;
-            i /= 10;
+    public static int[] getArray(int num) {
+        int[] array = new int[lengthNumber(num)];
+        int counter = lengthNumber(num) - 1;
+        while (num != 0) {
+            array[counter] = num % 10;
+            num /= 10;
             counter--;
         }
 
@@ -339,32 +338,68 @@ public class Methods {
         return sum;
     }
 
-//    public static void searchNumber(int[] arr) {
-//        int result = 0;
-//        for (int i = 0; i < arr.length; i++) {
-//            switch (arr.length) {
-//                case 2: {
-//                    if (arr[i] + 1 == arr[i + 1]) {
-//                        print(result);
-//                    }
-//                    break;
-//                }
-//                case 3:{
-//                    if (arr[i] + 1 == arr[i + 1] && arr[i] + 2 == arr[i + 2]) {
-//                        print(result);
-//                    }
-//                    break;}
-//                case 4:
-//                { if (arr[i] + 1 == arr[i + 1] && arr[i + 1] + 1 == arr[i + 2] && arr[i + 2] + 1 == arr[i + 3]) {
-//                        print(result);
-//                    }
-//                    break;}
-//
-//            }
-//
-//        }
-//    }
+    public static void getArrayOfNumber(int num) {
+        int[] array = new int[lengthNumber(num)];
+        int counter = lengthNumber(num) - 1;
+        while (num != 0) {
+            array[counter] = num % 10;
+            num /= 10;
+            counter--;
+        }
+        searchNumber(array);
 
 
+    }
+
+    public static void searchNumber(int[] arr) {
+
+        int i = 0;
+        switch (arr.length) {
+            case 2: {
+                if (isaBoolean2(arr, i)) {
+                  printArray(arr);
+
+                }
+                break;
+            }
+            case 3: {
+                if (isaBoolean3(arr, i)) {
+                    printArray(arr);
+                }
+                break;
+            }
+            case 4: {
+                if (isaBoolean4(arr, i)) {
+                    printArray(arr);
+                }
+                break;
+            }
+
+        }
+
+    }
+
+    private static boolean isaBoolean2(int[] arr, int i) {
+        return arr[i] + 1 == arr[i + 1];
+    }
+
+    private static boolean isaBoolean4(int[] arr, int i) {
+        return isaBoolean3(arr, i) && arr[i] + 3 == arr[i + 3];
+    }
+
+    private static boolean isaBoolean3(int[] arr, int i) {
+        return isaBoolean2(arr, i) && arr[i] + 2 == arr[i + 2];
+    }
+
+    static void printArray(int[] arr) {
+        int result=0;
+        for (int i =arr.length -1 , n = 0; i >= 0; --i, n++) {
+            int pos = (int)Math.pow(10, i);
+            result += arr[n] * pos;
+        }
+        System.out.printf("%5d",result);
+    }
 }
+
+
 
