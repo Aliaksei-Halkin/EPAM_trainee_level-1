@@ -117,7 +117,14 @@ public class Methods {
         int aN = 10000;
         System.out.println("4.15 Numbers sort: ");
         for (int i = 1; i <= aN; i++) {
-            getArrayOfNumber(i);
+            searchNumber(getArrayOfNumber(i));
+        }
+        //4.16
+        System.out.println("\n4.16 Result for 3th numbers: ");
+        for (int i = 100; i < 1000; i++) {
+            System.out.print("In number " + i);
+            System.out.print("  sum of odd numbers " +  searchOdd(getArrayOfNumber(i)));
+            System.out.println("  and 'sum of odd' consist is numbers of even " +  searchEven( getArrayOfNumber(searchOdd(getArrayOfNumber(i)))));
         }
     }
 
@@ -338,7 +345,7 @@ public class Methods {
         return sum;
     }
 
-    public static void getArrayOfNumber(int num) {
+    public static int[] getArrayOfNumber(int num) {
         int[] array = new int[lengthNumber(num)];
         int counter = lengthNumber(num) - 1;
         while (num != 0) {
@@ -346,9 +353,7 @@ public class Methods {
             num /= 10;
             counter--;
         }
-        searchNumber(array);
-
-
+        return array;
     }
 
     public static void searchNumber(int[] arr) {
@@ -357,7 +362,7 @@ public class Methods {
         switch (arr.length) {
             case 2: {
                 if (isaBoolean2(arr, i)) {
-                  printArray(arr);
+                    printArray(arr);
 
                 }
                 break;
@@ -392,12 +397,33 @@ public class Methods {
     }
 
     static void printArray(int[] arr) {
-        int result=0;
-        for (int i =arr.length -1 , n = 0; i >= 0; --i, n++) {
-            int pos = (int)Math.pow(10, i);
+        int result = 0;
+        for (int i = arr.length - 1, n = 0; i >= 0; --i, n++) {
+            int pos = (int) Math.pow(10, i);
             result += arr[n] * pos;
         }
-        System.out.printf("%5d",result);
+        System.out.printf("%5d", result);
+    }
+
+    static int searchOdd(int[] arr) {
+        int sum = 0;
+        for (int i = 0; i < arr.length; i++) {
+            if (arr[i] % 2 != 0) {
+                sum += arr[i];
+            }
+        }
+        return sum;
+    }
+
+    static int searchEven(int[] arr) {
+
+        int counter = 0;
+        for (int i = 0; i < arr.length; i++) {
+            if (arr[i] % 2 == 0) {
+                counter++;
+            }
+        }
+        return counter;
     }
 }
 
