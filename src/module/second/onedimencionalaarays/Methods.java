@@ -121,11 +121,32 @@ public class Methods {
         }
         //4.16
         System.out.println("\n4.16 Result for 3th numbers: ");
-        for (int i = 100; i < 1000; i++) {
+        for (int i = 10; i < 100; i++) {
             System.out.print("In number " + i);
-            System.out.print("  sum of odd numbers " +  searchOdd(getArrayOfNumber(i)));
-            System.out.println("  and 'sum of odd' consist is numbers of even " +  searchEven( getArrayOfNumber(searchOdd(getArrayOfNumber(i)))));
+            System.out.print("  sum of odd numbers " + searchOdd(getArrayOfNumber(i)));
+            System.out.println("  and 'sum of odd' consist is numbers of even " + searchEven(getArrayOfNumber(searchOdd(getArrayOfNumber(i)))));
         }
+
+        //4.17
+        int numberForTask17 = 100;
+        int counter = 0;
+        while (numberForTask17 > 0) {
+            int[] arr1 = getArrayOfNumber(numberForTask17);
+            numberForTask17 = numberForTask17 - getSumOfNumbers(arr1);
+            if (numberForTask17 >= 0) {
+                counter++;
+            }
+        }
+        System.out.println("4.17 Quantity of actions: " + counter);
+
+    }
+
+    private static int getSumOfNumbers(int[] arr) {
+        int sum = 0;
+        for (int i = 0; i < arr.length; i++) {
+            sum += arr[i];
+        }
+        return sum;
     }
 
 
@@ -328,7 +349,6 @@ public class Methods {
     }
 
     public static int lengthNumber(int a) {
-
         int b = 0;
         while (a >= 1) {
             b++;
