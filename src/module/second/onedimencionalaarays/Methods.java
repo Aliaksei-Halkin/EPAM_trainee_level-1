@@ -295,7 +295,7 @@ public class Methods {
     }
 
     static Integer creatingNumbers(int num1, int num) {
-        int bufferNum = (int) (Math.random() * num);
+        int bufferNum = (int) (1+Math.random() * num);
         if (bufferNum < 10) {
             int m = num1 - bufferNum;
             return Integer.parseInt(String.valueOf(m) + String.valueOf(bufferNum));
