@@ -24,7 +24,13 @@ public class ArrayOfChars {
 
         System.out.println(Arrays.toString(camelCase));
         System.out.println(Arrays.toString(runTask1_1(camelCase)));
-
+        //1.12
+        String str = "word  camelword  camel word  camelwordword  camel  ";
+        String str2 = str.replaceAll("word", "letter");
+        System.out.println(str2);
+        //1.13
+        String stringForTask3 = "1234f5f6f78f9fds0vb1e2asf3sf4sf5sf6sc7sf8xdsg9c0";
+        System.out.println("1.13 The Result, quantity of numbers is "+runTask1_3(stringForTask3));
 
     }
 
@@ -49,4 +55,16 @@ public class ArrayOfChars {
 
         return array;
     }
+
+    static int runTask1_3(String str) {
+        int counter = 0;
+        for (int i = 0; i < str.length(); i++) {
+            char num= str.charAt(i);
+            if(Character.isDigit(num)==true){
+                counter++;
+            }
+        }
+        return counter;
+    }
+
 }
