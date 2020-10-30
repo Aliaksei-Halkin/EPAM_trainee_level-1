@@ -34,7 +34,6 @@ public class ArrayOfChars {
         //1.15
         String str5 = "  Hello world      Hello    world    Hello   world  Hello  world  Hello world ";
         str5 = str5.strip();
-        System.out.println(str5);
         System.out.println("1.5 The Result string " + runTask1_5(str5));
 
     }
