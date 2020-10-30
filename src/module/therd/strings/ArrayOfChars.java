@@ -1,7 +1,5 @@
 package module.therd.strings;
 
-import java.sql.Array;
-import java.sql.SQLOutput;
 import java.util.Arrays;
 
 /**
@@ -32,8 +30,13 @@ public class ArrayOfChars {
         String stringForTask3 = "1234f5f6f78f9fds0vb1e2asf3sf4sf5sf6sc7sf8xdsg9c0";
         System.out.println("1.3 The Result, quantity of numbers is " + runTask1_3(stringForTask3));
         //1.4
-
         System.out.println("1.4 The Result, quantity of numbers is " + runTask1_4(stringForTask3));
+        //1.15
+        String str5 = "  Hello world      Hello    world    Hello   world  Hello  world  Hello world ";
+        str5 = str5.strip();
+        System.out.println(str5);
+        System.out.println("1.5 The Result string " + runTask1_5(str5));
+
     }
 
     static String[] runTask1_1(String[] array) {
@@ -44,12 +47,10 @@ public class ArrayOfChars {
                 if (Character.isLowerCase(letter)) {
                     strBuilder.append(letter);
                 } else {
-                    if (j == 0) {
-                        strBuilder.append(Character.toLowerCase(letter));
-                    } else {
+                    if (j != 0) {
                         strBuilder.append("_");
-                        strBuilder.append(Character.toLowerCase(letter));
                     }
+                    strBuilder.append(Character.toLowerCase(letter));
                 }
             }
             array[i] = strBuilder.toString();
@@ -62,7 +63,7 @@ public class ArrayOfChars {
         int counter = 0;
         for (int i = 0; i < str.length(); i++) {
             char num = str.charAt(i);
-            if (Character.isDigit(num) == true) {
+            if (Character.isDigit(num)) {
                 counter++;
             }
         }
@@ -71,16 +72,29 @@ public class ArrayOfChars {
 
     static int runTask1_4(String str) {
         int counter = 0;
-        for (int i = 0; i < str.length()-1; i++) {
+        for (int i = 0; i < str.length() - 1; i++) {
             char num = str.charAt(i);
             char num2 = str.charAt(i + 1);
 
-            if (Character.isDigit(num) == true && Character.isDigit(num2) == false) {
+            if (Character.isDigit(num) && !Character.isDigit(num2)) {
                 counter++;
             }
         }
         return counter;
+    }
 
+    static String runTask1_5(String str) {
+        StringBuilder strBuilder = new StringBuilder();
+        for (int i = 0; i < str.length() - 1; i++) {
+            char letter = str.charAt(i);
+            char letter2 = str.charAt(i + 1);
+            if (letter != ' ') {
+                strBuilder.append(letter);
+            } else if (letter2 != ' ') {
+                strBuilder.append(letter);
+            }
+        }
+        return strBuilder.toString();
     }
 
 }
