@@ -1,7 +1,5 @@
 package module.therd.strings;
 
-import java.util.Locale;
-
 /**
  * 1. Дан текст (строка). Найдите наибольшее количество подряд идущих пробелов в нем.
  * <p>
@@ -32,6 +30,11 @@ public class StringOrStrBulder {
         //2.1
         String str = "Дан текст  (строка). Найдите     наибольшее количество подряд идущих пробелов в нем.";
         System.out.println("Maximum quantity of spases: " + runTask2_1(str));
+        //2.2
+        String str2 = "And from Nevada, the money trail leads to Chongqing City," +
+                " the pharma capital of the People's Republic of China";
+        System.out.println("Result sentences(after letter \"a\" include letter \"b\": " + runTask2_2(str2));
+
     }
 
     static int runTask2_1(String sentences) {
@@ -40,15 +43,25 @@ public class StringOrStrBulder {
         for (int i = 0; i < sentences.length(); i++) {
             if (sentences.charAt(i) == ' ') {
                 counter++;
-            }
-            else  {
+            } else {
                 if (counter > maxCount) {
                     maxCount = counter;
                 }
-                counter=0;
+                counter = 0;
             }
         }
         return maxCount;
     }
 
+    private static String runTask2_2(String sentences) {
+        StringBuilder stringBuilder = new StringBuilder();
+        for (int i = 0; i < sentences.length(); i++) {
+            if (sentences.charAt(i) == 'a') {
+                stringBuilder.append("ab");
+            } else {
+                stringBuilder.append(sentences.charAt(i));
+            }
+        }
+               return new String(stringBuilder);
+    }
 }
