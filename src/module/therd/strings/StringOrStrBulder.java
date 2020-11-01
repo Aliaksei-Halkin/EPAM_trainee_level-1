@@ -110,9 +110,7 @@ public class StringOrStrBulder {
     private static String runTask2_6(String str) {
         StringBuilder stringBuilder = new StringBuilder();
         for (int i = 0; i < str.length(); i++) {
-            for (int j = 0; j < 2; j++) {
-                stringBuilder.append(str.charAt(i));
-            }
+            stringBuilder.append(String.valueOf(str.charAt(i)).repeat(2));
         }
         return stringBuilder.toString();
     }
