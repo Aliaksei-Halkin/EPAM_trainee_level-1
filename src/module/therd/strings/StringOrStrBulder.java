@@ -61,11 +61,16 @@ public class StringOrStrBulder {
         System.out.println("Result 2.8, max length: " + searchMaxWord(runTask2_8(str8)));
         //2.9
         String str9 = "Посчитать количество строчных (маленьких) и прописных (больших) букв в введенной строке." +
-                " Учитывать только\n английские буквы" + str2;
+                " Учитывать только\n" +
+                " английские буквы" + str2;
         int LowLetter = runLowTask2_9(str9);
         int UpperLetter = runUpperTask2_9(str9);
         System.out.println("Result 2.9, low letters are: " +runLowTask2_9(str9)+", upper letters are "+
                 runUpperTask2_9(str9 ));
+        //2,10
+        String str10= "Sentence.Sentence.Sentence!Sentence.Sentence?Sentence.Sentence!Sentence.Sentence?Sentence.";
+        System.out.println("Result 2.10, quantity of sentences are: " + runTask2_10(str10));
+
 
 
     }
@@ -193,6 +198,15 @@ public class StringOrStrBulder {
         }
         return counter;
     }
-
+    private static int runTask2_10(String string) {
+        int counter = 0;
+        for (int i = 0; i < string.length(); i++) {
+            char ch = string.charAt(i);
+            if (ch == '.' || ch == '!'|| ch == '?') {
+                counter++;
+            }
+        }
+        return counter;
+    }
 
 }
