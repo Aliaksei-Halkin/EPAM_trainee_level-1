@@ -32,14 +32,14 @@ public class StringOrStrBulder {
     public static void main(String[] args) {
         //2.1
         String str = "Дан текст  (строка). Найдите     наибольшее количество подряд идущих пробелов в нем.";
-        System.out.println("Maximum quantity of spases: " + runTask2_1(str));
+        System.out.println("2.1 Maximum quantity of spases: " + runTask2_1(str));
         //2.2
         String str2 = "And from Nevada, the money trail leads to Chongqing City," +
                 " the pharma capital of the People's Republic of China";
-        System.out.println("Result sentences(after letter \"a\" include letter \"b\": " + runTask2_2(str2));
+        System.out.println("Result 2.2 sentences(after letter \"a\" include letter \"b\": " + runTask2_2(str2));
 //2.3
         String str3 = "Madam";
-        System.out.println("Result,Is it polindrom?  " + runTask2_3(str3));
+        System.out.println("Result 2.3,Is it polindrom?  " + runTask2_3(str3));
         //2.4
         String str4 = "информатика";
 
@@ -48,7 +48,7 @@ public class StringOrStrBulder {
         System.out.println("Result task2_4: " + result);
         //2.5
         String str5 = "Подсчитать, сколько раз среди символов заданной строки встречается буква “а”";
-        System.out.println("Result: " + runTask2_5(str5));
+        System.out.println("Result 2.5: " + runTask2_5(str5));
         //2.6
         String str6 = "повторить дважды";
         System.out.println("Result 2.6: " + runTask2_6(str6));
@@ -59,6 +59,13 @@ public class StringOrStrBulder {
         String str8 = "Вводится строка слов, разделенных  пробелами. Найти             самое длинное слово и" +
                 " вывести его на экран n";
         System.out.println("Result 2.8, max length: " + searchMaxWord(runTask2_8(str8)));
+        //2.9
+        String str9 = "Посчитать количество строчных (маленьких) и прописных (больших) букв в введенной строке." +
+                " Учитывать только\n английские буквы" + str2;
+        int LowLetter = runLowTask2_9(str9);
+        int UpperLetter = runUpperTask2_9(str9);
+        System.out.println("Result 2.9, low letters are: " +runLowTask2_9(str9)+", upper letters are "+
+                runUpperTask2_9(str9 ));
 
 
     }
@@ -154,7 +161,7 @@ public class StringOrStrBulder {
     private static String searchMaxWord(String string) {
         String[] str = string.split(" ");
         int counter = 0;
-        String result=null;
+        String result = null;
         for (int i = 0; i < str.length; i++) {
             str[i] = str[i].trim();
             if (str[i].length() > counter) {
@@ -164,5 +171,28 @@ public class StringOrStrBulder {
         }
         return result;
     }
+
+    private static int runLowTask2_9(String string) {
+        int counter = 0;
+        for (int i = 0; i < string.length(); i++) {
+            char ch = string.charAt(i);
+            if (ch >= 'a' && ch <= 'w') {
+                counter++;
+            }
+        }
+        return counter;
+    }
+
+    private static int runUpperTask2_9(String string) {
+        int counter = 0;
+        for (int i = 0; i < string.length(); i++) {
+            char ch = string.charAt(i);
+            if (ch >= 'A' && ch <= 'W') {
+                counter++;
+            }
+        }
+        return counter;
+    }
+
 
 }
