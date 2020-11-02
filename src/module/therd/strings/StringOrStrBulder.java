@@ -70,9 +70,6 @@ public class StringOrStrBulder {
         //2,10
         String str10= "Sentence.Sentence.Sentence!Sentence.Sentence?Sentence.Sentence!Sentence.Sentence?Sentence.";
         System.out.println("Result 2.10, quantity of sentences are: " + runTask2_10(str10));
-
-
-
     }
 
     static int runTask2_1(String sentences) {
