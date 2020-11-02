@@ -1,5 +1,8 @@
 package module.therd.strings;
 
+
+import java.util.Arrays;
+
 /**
  * 1. Дан текст (строка). Найдите наибольшее количество подряд идущих пробелов в нем.
  * <p>
@@ -48,10 +51,15 @@ public class StringOrStrBulder {
         System.out.println("Result: " + runTask2_5(str5));
         //2.6
         String str6 = "повторить дважды";
-        System.out.println("Result 2.6 : " + runTask2_6(str6));
+        System.out.println("Result 2.6: " + runTask2_6(str6));
         //2.7
         String str7 = "  jja   av v aa a vir  ttt  tuu  ual macc  cchine  e   ";
         System.out.println("Result 2.7: " + runTask2_7(str7));
+        //2.8
+        String str8 = "Вводится строка слов, разделенных  пробелами. Найти             самое длинное слово и" +
+                " вывести его на экран n";
+        System.out.println("Result 2.8, max length: " + searchMaxWord(runTask2_8(str8)));
+
 
     }
 
@@ -80,8 +88,9 @@ public class StringOrStrBulder {
                 stringBuilder.append(sentences.charAt(i));
             }
         }
-               return new String(stringBuilder);
+        return new String(stringBuilder);
     }
+
     private static boolean runTask2_3(String sentences) {
         boolean firstBoolean = false;
         boolean secondBoolean = true;
@@ -119,15 +128,41 @@ public class StringOrStrBulder {
         StringBuilder stringBuilder = new StringBuilder();
         str = str.trim();
         for (int i = 0; i < str.length(); i++) {
-            if (str.charAt(i) != ' '){
+            if (str.charAt(i) != ' ') {
                 stringBuilder.append(str.charAt(i));
             }
         }
-        for (int i = stringBuilder.length()-1; i > 0; i--) {
-            if (stringBuilder.charAt(i)==stringBuilder.charAt(i-1)){
+        for (int i = stringBuilder.length() - 1; i > 0; i--) {
+            if (stringBuilder.charAt(i) == stringBuilder.charAt(i - 1)) {
                 stringBuilder.deleteCharAt(i);
             }
         }
         return stringBuilder.toString();
     }
+
+    private static String runTask2_8(String str) {
+        StringBuilder stringBuilder = new StringBuilder();
+        for (int i = 0; i < str.length(); i++) {
+            char ch = str.charAt(i);
+            if (ch != '.' && ch != ',') {
+                stringBuilder.append(ch);
+            }
+        }
+        return stringBuilder.toString();
+    }
+
+    private static String searchMaxWord(String string) {
+        String[] str = string.split(" ");
+        int counter = 0;
+        String result=null;
+        for (int i = 0; i < str.length; i++) {
+            str[i] = str[i].trim();
+            if (str[i].length() > counter) {
+                counter = str[i].length();
+                result = str[i];
+            }
+        }
+        return result;
+    }
+
 }
