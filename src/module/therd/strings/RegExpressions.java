@@ -58,8 +58,6 @@ import java.util.regex.Pattern;
  */
 public class RegExpressions {
     public static void main(String[] args) {
-
-
         String text = " Ну что, князь, Генуя и Лукка стали не больше как поместья, поместья фамилии Буонапарте." +
                 "Нет, я вам вперед говорю, если вы мне не скажете, что у нас война, если вы позволите себе защищать все " +
                 "гадости,   все ужасы этого антихриста (право, я верю, что он антихрист), я вас больше не знаю, вы уже" +
@@ -74,13 +72,15 @@ public class RegExpressions {
                 " нападение! Нисколько не смутясь такой встречей и слабо улыбаясь, вошедший князь с светлым" +
                 " выражением хитрого лица, в придворном шитом мундире, чулках, башмаках и звездах.";
 
-//        System.out.println("Result paragraf sorting: ");
-//        sortParagraf(getStringsSentence(text));
-//        System.out.println("Result, words sorting in sentenses : ");
-//        sortWordsInSentenses(getStringsSentence(text));
-//        String sumbol = "а";
-//        System.out.println("Result leksem sorting in sentenses: ");
-//        sortLexem(getStringsSentence(text), sumbol);
+
+
+        System.out.println("Result paragraf sorting: ");
+        sortParagraf(getStringsSentence(text));
+        System.out.println("Result, words sorting in sentenses : ");
+        sortWordsInSentenses(getStringsSentence(text));
+        String sumbol = "а";
+        System.out.println("Result leksem sorting in sentenses: ");
+        sortLexem(getStringsSentence(text), sumbol);
 
         //3.2
         String xml = "<notes>\n" +
@@ -149,8 +149,8 @@ public class RegExpressions {
     }
 
     static void sortLexem(String[] sentences, String letter) {
-        for (int i = 0; i < sentences.length; i++) {
-            String[] words = splitSentences(sentences[i]);
+        for (String sentence : sentences) {
+            String[] words = splitSentences(sentence);
 
             for (int k = words.length - 1; k >= 0; k--) {
                 for (int m = 0; m < k; m++) {
@@ -189,8 +189,8 @@ public class RegExpressions {
     }
 
     static void sortWordsInSentenses(String[] sentences) {
-        for (int i = 0; i < sentences.length; i++) {
-            String[] wordsArray = splitSentences(sentences[i]);
+        for (String sentence : sentences) {
+            String[] wordsArray = splitSentences(sentence);
 
             for (int j = 0; j < wordsArray.length; j++) {
                 for (int k = 0; k < wordsArray.length - 1; k++) {
@@ -201,7 +201,7 @@ public class RegExpressions {
                     }
                 }
             }
-            System.out.println(Arrays.toString(wordsArray).replaceAll("\\[|\\]", ""));
+            System.out.println(Arrays.toString(wordsArray).replaceAll("[\\[\\]]", ""));
 
         }
     }
@@ -228,7 +228,7 @@ public class RegExpressions {
 
     // @org.jetbrains.annotations.NotNull
     static String[] getStringsSentence(String str) {
-        String[] paragraphs = str.split("\\s*(\\?|!|\\.)\\s*");
+        String[] paragraphs = str.split("\\s*([?!.])\\s*");
         for (int i = 0; i < paragraphs.length; i++) {
             paragraphs[i] = paragraphs[i].trim();
         }
@@ -237,9 +237,8 @@ public class RegExpressions {
 
     private static String[] splitSentences(String sentences) {
         Pattern pattern = Pattern.compile("\\s*(\\s|,|;|:|\")\\s*");
-        String[] str = pattern.split(sentences);
 
-        return str;
+        return pattern.split(sentences);
     }
 
 
