@@ -1,6 +1,7 @@
 package module.therd.strings;
 
 import java.util.Arrays;
+import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 /**
@@ -46,9 +47,12 @@ import java.util.regex.Pattern;
  * <p>
  * <p>
  * <p>
- * Напишите анализатор, позволяющий последовательно возвращать содержимое узлов xml-документа и его тип (открывающий тег, закрывающий тег, содержимое тега, тег без тела). Пользоваться готовыми парсерами XML для решения данной задачи нельзя.
+ * Напишите анализатор, позволяющий последовательно возвращать содержимое узлов xml-документа и его тип (открывающий
+ * тег, закрывающий тег, содержимое тега, тег без тела). Пользоваться готовыми парсерами XML для решения данной задачи
+ * нельзя.
  * <p>
- * <p>
+ *
+ * @author Alex
  * Write comment…
  * Result
  */
@@ -70,13 +74,78 @@ public class RegExpressions {
                 " нападение! Нисколько не смутясь такой встречей и слабо улыбаясь, вошедший князь с светлым" +
                 " выражением хитрого лица, в придворном шитом мундире, чулках, башмаках и звездах.";
 
-        System.out.println("Result paragraf sorting: ");
-        sortParagraf(getStringsSentence(text));
-        System.out.println("Result, words sorting in sentenses : ");
-        sortWordsInSentenses(getStringsSentence(text));
-        String sumbol = "а";
-        System.out.println("Result leksem sorting in sentenses: ");
-        sortLexem(getStringsSentence(text),sumbol);
+//        System.out.println("Result paragraf sorting: ");
+//        sortParagraf(getStringsSentence(text));
+//        System.out.println("Result, words sorting in sentenses : ");
+//        sortWordsInSentenses(getStringsSentence(text));
+//        String sumbol = "а";
+//        System.out.println("Result leksem sorting in sentenses: ");
+//        sortLexem(getStringsSentence(text), sumbol);
+
+        //3.2
+        String xml = "<notes>\n" +
+                "\n" +
+                "   <note id = \"1\">\n" +
+                "\n" +
+                "       <to>Вася</to>\n" +
+                "\n" +
+                "       <from>Света</from>\n" +
+                "\n" +
+                "       <heading>Напоминание</heading>\n" +
+                "\n" +
+                "       <body>Позвони мне завтра!</body>\n" +
+                "\n" +
+                "   </note>\n" +
+                "\n" +
+                "   <note id = \"2\">\n" +
+                "\n" +
+                "       <to>Петя</to>\n" +
+                "\n" +
+                "       <from>Маша</from>\n" +
+                "\n" +
+                "       <heading>Важное напоминание</heading>\n" +
+                "\n" +
+                "       <body/>\n" +
+                "\n" +
+                "   </note>\n" +
+                "\n" +
+                "</notes>";
+        String xmlAnalysis = xmlAnalyzer(xml);
+        System.out.println(xmlAnalysis);
+    }
+
+    private static String xmlAnalyzer(String xml) {
+        StringBuilder strBuilder = new StringBuilder();
+        Pattern pOpen = Pattern.compile("<\\w.+?>");
+        Pattern pClose = Pattern.compile("</\\w+>");
+        Pattern pBody = Pattern.compile(">.+?<");
+        Pattern pEmpty = Pattern.compile("<\\w.+?/>");
+
+        String[] lines = xml.split("\n\\s*");
+
+        for (String line : lines) {
+            Matcher mOpen = pOpen.matcher(line);
+            Matcher mClose = pClose.matcher(line);
+            Matcher mBody = pBody.matcher(line);
+            Matcher mEmpty = pEmpty.matcher(line);
+            if (mEmpty.find()) {
+                strBuilder.append(mEmpty.group());
+                strBuilder.append(" - tag without body\n");
+            } else if (mOpen.find()) {
+                strBuilder.append(mOpen.group());
+                strBuilder.append(" - opened tag\n");
+            }
+            if (mBody.find()) {
+                strBuilder.append(mBody.group().substring(1));
+                strBuilder.append("\b - tag consists\n");
+            }
+            if (mClose.find()) {
+                strBuilder.append(mClose.group());
+                strBuilder.append(" - closed tag\n");
+            }
+
+        }
+        return strBuilder.toString();
     }
 
     static void sortLexem(String[] sentences, String letter) {
