@@ -8,5 +8,6 @@ public class MethodMain {
         Test1 therdObject = new Test1();
         therdObject.setNumberOne(30);
         therdObject.setNumberTwo(40);
+
     }
 }
