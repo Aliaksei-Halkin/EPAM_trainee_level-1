@@ -1,6 +1,5 @@
 package module.fourth.task3;
 
-import java.lang.reflect.Array;
 
 /**
  * Создайте класс с именем Student, содержащий поля: фамилия и инициалы, номер группы, успеваемость (массив
@@ -10,7 +9,7 @@ import java.lang.reflect.Array;
 public class Student {
     private String surnameAndInitials;
     private int numberGroup;
-    private int[] effectiveness = new int[5];
+    private int[] effectiveness;
 
     public Student(String surnameAndInitials, int numberGroup, int[] effectiveness) {
         this.surnameAndInitials = surnameAndInitials;
