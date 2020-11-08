@@ -9,10 +9,10 @@ public class CustomerService {
         return sortedCustomers;
     }
 
-    public Customer[] findCardInInterval(Customer[] customers, int from, int to) {
-        //создаем новый массив и пихаем в него только тех кастомеров из изначального массива, у которых номер карточки подпает
-
-    }
+//    public Customer[] findCardInInterval(Customer[] customers, int from, int to) {
+//        //создаем новый массив и пихаем в него только тех кастомеров из изначального массива, у которых номер карточки подпает
+//
+//    }
 
     private boolean cardInInterval(Customer customer, int from, int to) {
         int cardNumber = customer.getCardNumber();

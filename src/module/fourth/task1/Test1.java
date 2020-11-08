@@ -5,8 +5,8 @@ public class Test1 {
     private int numberTwo;
 
     public Test1() {
-        this.numberTwo = 3;
-        this.numberOne = 4;
+        this.numberTwo = 2;
+        this.numberOne = 1;
     }
 
     public Test1(int numberOne, int numberTwo) {
