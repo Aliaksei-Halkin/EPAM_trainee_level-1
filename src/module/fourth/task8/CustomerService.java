@@ -15,9 +15,9 @@ public class CustomerService {
         int lengthOfArr=countlengthOfArray(customers,from,to) ;
         Customer[] sortedCustomers2 = new Customer[lengthOfArr];
         int counter = 0;
-        for (int i = 0; i < customers.length; i++) {
-            if (cardInInterval(customers[i], from, to) == true) {
-                sortedCustomers2[counter] = customers[i];
+        for (Customer customer : customers) {
+            if (cardInInterval(customer, from, to)) {
+                sortedCustomers2[counter] = customer;
                 counter++;
             }
         }
@@ -32,8 +32,8 @@ public class CustomerService {
 
     public int countlengthOfArray(Customer[] customer, int from, int to) {
         int counter = 0;
-        for (int i = 0; i < customer.length; i++) {
-            int cardNumber = customer[i].getCardNumber();
+        for (Customer value : customer) {
+            int cardNumber = value.getCardNumber();
             if (cardNumber >= from && cardNumber <= to) {
                 counter++;
             }
