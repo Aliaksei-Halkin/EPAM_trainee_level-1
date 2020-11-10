@@ -1,6 +1,6 @@
-package module.fourth.eight;
+package module.fourth.task8;
 
-public class Customer implements Comparable<Customer>{
+public class Customer implements Comparable<Customer> {
     private int id;
     private String name;
     private String surname;
@@ -79,6 +79,7 @@ public class Customer implements Comparable<Customer>{
 
     @Override
     public int compareTo(final Customer anotherCustomer) {
+
         return getName().compareTo(anotherCustomer.getName());
     }
 }
