@@ -1,13 +1,8 @@
 package module.fourth.task4;
 
 
-import java.sql.Time;
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.util.Arrays;
 import java.util.Comparator;
-import java.util.Date;
-import java.util.Scanner;
+
 
 /**
  * Создайте класс Train, содержащий поля: название пункта назначения, номер поезда, время отправления.
