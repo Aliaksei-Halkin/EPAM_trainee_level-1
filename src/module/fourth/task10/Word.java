@@ -1,9 +1,14 @@
 package module.fourth.task10;
 
 public class Word {
-    private String words;
+    private String word;
 
-    public Word(String words) {
-        this.words = words;
+    public Word(final String word) {
+        this.word = word;
+    }
+
+    @Override
+    public String toString() {
+        return word;
     }
 }
