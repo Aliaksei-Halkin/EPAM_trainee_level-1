@@ -10,10 +10,12 @@ public class Sentence {
     }
 
     public Sentence(final List<Word> words) {
+
         this.words = words;
     }
 
     public List<Word> getWords() {
+
         return words;
     }
 
