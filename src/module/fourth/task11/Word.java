@@ -1,4 +1,4 @@
-package module.fourth.task10;
+package module.fourth.task11;
 
 public class Word {
     private String word;
