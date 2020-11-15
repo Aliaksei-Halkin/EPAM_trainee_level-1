@@ -22,7 +22,7 @@ public class Account {
     }
 
     public void addValueAccount(double value) {
-        if (block == false) {
+        if (!block) {
             accountValue += value;
         } else {
             System.out.println("Account is blocked");
@@ -51,7 +51,7 @@ public class Account {
 
 
     public void getValueAccount(double value) {
-        if (block == false) {
+        if (!block) {
             accountValue -= value;
         }
     }
