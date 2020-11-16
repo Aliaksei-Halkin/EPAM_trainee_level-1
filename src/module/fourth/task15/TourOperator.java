@@ -26,7 +26,7 @@ public class TourOperator {
                 System.out.println(tour.toString());
             }
         }
-        System.out.println("");
+        System.out.println(" ");
     }
     public void printCashTransportFoodDays(double cash,Transport transport,Food food,int days) {
         System.out.println("TourOperator" +
