@@ -50,11 +50,7 @@ public class Account {
     }
 
 
-    public void getValueAccount(double value) {
-        if (!block) {
-            accountValue -= value;
-        }
-    }
+
 
     @Override
     public String toString() {

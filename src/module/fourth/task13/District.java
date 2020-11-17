@@ -1,11 +1,12 @@
 package module.fourth.task13;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class District {
     private String nameOfDistricte;
     private double area;
-    private List<City> cities;
+    private List<City> cities=new ArrayList<>();
 
     public List<module.fourth.task13.City> getCities() {
         return cities;

@@ -116,9 +116,9 @@ public class Car {
         }
     }
 
-    public void changeTheWheel(Car citroenC5, int numberOfWheels) {
+    public void changeTheWheel( int numberOfWheels) {
         if (numberOfWheels != 0 && numberOfWheels <= wheels.size()) {
-            citroenC5.wheels.set(numberOfWheels, new Wheel("R18", 185, 65, "winter"));
+            this.wheels.set(numberOfWheels, new Wheel("R18", 185, 65, "winter"));
         }
     }
 }

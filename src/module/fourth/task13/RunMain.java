@@ -13,7 +13,7 @@ public class RunMain {
         City aGrodno = new City("Grodno");
 
         District minskiy = new District("Minsky", 25.2);
-       // minskiy.addlist(aMinsk);
+        minskiy.addlist(aMinsk);
 
         Region minsky = new Region("Minsky", aMinsk, 1255.27);
 
@@ -26,11 +26,11 @@ public class RunMain {
 
 
         State belarus = new State(aMinsk, new Region[]{minsky, brestsky, mogilessky, vitebsky, gomelsky, grodnensky});
-        System.out.println("Area country " + belarus.areaCountry(belarus.getRegions()));
+        System.out.println("Area country " + belarus.areaCountry());
 
-        System.out.println("Capital "+belarus.getCapital().toString());
+        System.out.println("Capital " + belarus.getCapital().toString());
         belarus.regionCapital();
-        System.out.println("Number of regions "+belarus.getRegions().length);
+        System.out.println("Number of regions " + belarus.getRegions().length);
 
 
     }

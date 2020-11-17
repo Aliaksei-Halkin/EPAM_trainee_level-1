@@ -23,7 +23,7 @@ public class State {
         return capital;
     }
 
-    public double areaCountry(Region[] regions) {
+    public double areaCountry() {
         double counter = 0;
         for (Region reg : regions
         ) {
