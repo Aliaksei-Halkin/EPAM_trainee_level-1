@@ -87,6 +87,7 @@ public class LinearPrograms {
     private static boolean firstArea(int valueX, int valueY) {
         return valueX >= -4 && valueX <= 4 && valueY <= -3 && valueY <= 0;
     }
+
 }
 
 

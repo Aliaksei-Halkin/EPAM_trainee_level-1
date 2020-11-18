@@ -86,8 +86,14 @@ public class Car {
         for (int i = 0; i < wheels.size() - 1; i++) {
 
 //проверяю чтобы все колеса были одинаковые, иквелс не работает:
+//            var h = wheels.get(i).hashCode();
+//            var h2 = wheels.get(i+1).hashCode();
+//            if (h == h2) {
+//                equalsTypeOfWhells = false;
+//            }
             if (wheels.get(i).equals(wheels.get(i + 1))) {
                 equalsTypeOfWhells = false;
+                System.out.println(equalsTypeOfWhells);
             }
 
             if (!equalsTypeOfWhells) {
@@ -116,7 +122,7 @@ public class Car {
         }
     }
 
-    public void changeTheWheel( int numberOfWheels) {
+    public void changeTheWheel(int numberOfWheels) {
         if (numberOfWheels != 0 && numberOfWheels <= wheels.size()) {
             this.wheels.set(numberOfWheels, new Wheel("R18", 185, 65, "winter"));
         }

@@ -23,6 +23,7 @@ public class RunMain {
         citroenC5.fuelling(100);
 
         citroenC5.changeTheWheel(5);
-
+        System.out.println(citroenC5);
     }
+
 }

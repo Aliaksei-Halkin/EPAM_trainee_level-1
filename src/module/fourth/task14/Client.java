@@ -148,9 +148,9 @@ public class Client {
     }
 
 
-   public void printAccount(){
-        for (Account coun:
-             accounts) {
+    public void printAccount() {
+        for (Account coun :
+                accounts) {
             System.out.println(coun.toString());
 
         }
@@ -188,7 +188,7 @@ public class Client {
             @Override
             public int compare(Account o1, Account o2) {
                 if (o1.getAccountValue() == o2.getAccountValue()) return 0;
-                else if (o1.getAccountValue()> o2.getAccountValue()) return 1;
+                else if (o1.getAccountValue() > o2.getAccountValue()) return 1;
                 else return -1;
             }
         });
