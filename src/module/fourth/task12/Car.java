@@ -91,7 +91,7 @@ public class Car {
 //            if (h == h2) {
 //                equalsTypeOfWhells = false;
 //            }
-            if (wheels.get(i).equals(wheels.get(i + 1))) {
+            if (!wheels.get(i).equals(wheels.get(i + 1))) {
                 equalsTypeOfWhells = false;
                 System.out.println(equalsTypeOfWhells);
             }

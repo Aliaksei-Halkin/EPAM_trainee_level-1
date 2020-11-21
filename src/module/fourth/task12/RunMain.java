@@ -10,7 +10,7 @@ public class RunMain {
         citroenC5.setWheels(
                 new Wheel("R18", 185, 65, "winter"),
                 new Wheel("R18", 185, 65, "winter"),
-                new Wheel("", 0, 65, "winter"),
+                new Wheel("R18", 185, 65, "winter"),
                 new Wheel("R18", 185, 65, "winter")
         );
         citroenC5.setEngine(Engine.PETROLEUM);
