@@ -1,6 +1,8 @@
 package module.fifth.task2;
 
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
 /**
  * Создать класс Payment с внутренним классом, с помощью объектов которого можно сформировать
@@ -9,12 +11,12 @@ import java.util.Arrays;
 public class Payment {
     int cash;
     int id;
-    Order order;
+    List<Order> order=new ArrayList<>();;
 
     public Payment() {
     }
 
-    public Payment(int cash, int id, Order order) {
+    public Payment(int cash, int id, List<Order> order) {
         this.cash = cash;
         this.id = id;
         this.order = order;
@@ -36,11 +38,11 @@ public class Payment {
         this.id = id;
     }
 
-    public Order getOrder() {
+    public List<Order> getOrder() {
         return order;
     }
 
-    public void setOrder(Order order) {
+    public void setOrder(List<Order> order) {
         this.order = order;
     }
 
