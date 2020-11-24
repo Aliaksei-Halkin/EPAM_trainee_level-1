@@ -1,7 +1,6 @@
 package module.fifth.task2;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 /**
@@ -9,63 +8,37 @@ import java.util.List;
  * покупку из нескольких товаров.
  */
 public class Payment {
-    int cash;
-    int id;
-    List<Order> order=new ArrayList<>();;
+    private final PaymentManager manager;
+    private List<Item> order=new ArrayList<>();
+
 
     public Payment() {
+        this.manager = new PaymentManager();
     }
 
-    public Payment(int cash, int id, List<Order> order) {
-        this.cash = cash;
-        this.id = id;
-        this.order = order;
-    }
-
-    public int getCash() {
-        return cash;
-    }
-
-    public void setCash(int cash) {
-        this.cash = cash;
-    }
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    public List<Order> getOrder() {
+    public List<Item> getOrder() {
         return order;
     }
 
-    public void setOrder(List<Order> order) {
+    public void setOrder(List<Item> order) {
         this.order = order;
     }
 
-    public class Order {
-        double weight;
-        double value;
-
-        public Order() {
-        }
-
-        public Order(double weight, double value) {
-            this.weight = weight;
-            this.value = value;
-        }
+    public void checkout(int cash) {
+        this.manager.checkout(cash);
     }
 
-    @Override
-    public String toString() {
-        return "Payment{" +
-                "cash=" + cash +
-                ", id=" + id +
-                ", order=" + order +
-                '}';
+    public class PaymentManager {
+
+        public void addItem(Item item) {
+            order.add(item);
+        }
+
+        public void checkout(int cash) {
+            //принимать деньги от юзера
+            //выводить список покупок
+            //выводить общую стоимость, сколько дали денег, и сколько было сдачи
+        }
     }
 
 

@@ -1,36 +1,45 @@
 package module.fifth.task1v2;
 
+import java.util.ArrayList;
+import java.util.List;
 
+public class Directory implements FileSystemElement{
 
-
-public class Directory {
-    private  String directory;
+    private String name;
+    private List<FileSystemElement> childElements = new ArrayList<>();
 
     public Directory() {
     }
 
-    public Directory(String directory) {
-        this.directory = directory;
-
+    public Directory(final String name) {
+        this.name = name;
     }
 
-    public String getDirectory() {
-        return directory;
-    }
-
-    public void setDirectory(String directory) {
-        this.directory = directory;
-    }
-
-    public void changeDirectory(String directory){
-        this.directory=directory;
+    public void addChild(FileSystemElement element) {
+        this.childElements.add(element);
     }
 
     @Override
     public String toString() {
         return "Directory{" +
-                "directory='" + directory + '\'' +
+                "name='" + name + '\'' +
                 '}';
     }
 
+    @Override
+    public String getName() {
+        return name;
+    }
+
+    @Override
+    public List<FileSystemElement> getChild() {
+        return childElements;
+    }
+
+    @Override
+    public void printContentsToConsole() {
+        for (FileSystemElement childElement : childElements) {
+            System.out.println(childElement.getName());
+        }
+    }
 }

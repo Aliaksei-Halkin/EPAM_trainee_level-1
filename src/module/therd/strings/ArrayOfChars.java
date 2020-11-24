@@ -33,7 +33,7 @@ public class ArrayOfChars {
         System.out.println("1.4 The Result, quantity of numbers is " + runTask1_4(stringForTask3));
         //1.15
         String str5 = "  Hello world      Hello    world    Hello   world  Hello  world  Hello world ";
-        str5 = str5.strip();
+//        str5 = str5.strip();
         System.out.println("1.5 The Result string " + runTask1_5(str5));
 
     }
