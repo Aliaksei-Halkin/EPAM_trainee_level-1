@@ -1,4 +1,4 @@
-package module.fifth;
+package module.fifth.task1;
 
 /**
  * Создать объект класса Текстовый файл, используя классы Файл, Директория.

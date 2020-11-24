@@ -1,4 +1,4 @@
-package module.fifth;
+package module.fifth.task1;
 
 public class Directory {
     String directory;

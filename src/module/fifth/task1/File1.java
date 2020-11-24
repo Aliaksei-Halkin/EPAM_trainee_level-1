@@ -1,4 +1,4 @@
-package module.fifth;
+package module.fifth.task1;
 
 public class File1 {
     String text;
