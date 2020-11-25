@@ -30,6 +30,6 @@ public class Calendar {
     }
 
     public boolean checkDateIsHoliday(Date date) {
-        return this.vacation.isDateIsHoliday(date)
+        return this.vacation.isDateIsHoliday(date);
     }
 }

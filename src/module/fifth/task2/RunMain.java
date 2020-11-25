@@ -3,14 +3,19 @@ package module.fifth.task2;
 public class RunMain {
     public static void main(String[] args) {
 
-        Payment payment = new Payment();
+        Item oranges = new Item("Oranges",1.5,3.2);
+        Item potatos = new Item("Potatos",5,3);
+        Item brocoli = new Item("Brocoli",2,5);
+        Item pork = new Item("Pork",2,10);
+        Item pasta = new Item("Pasta",1,2);
 
-//        Payment payment=new Payment( 5,1,new Payment.Item(1,0.7));
-//        payment.setOrder(  new Payment.Item(1.0,0.7));
-//
-//        Payment.Item potatos=new Payment.Item(1.0,0.7);
-//        Payment.Item orange=new Payment.Item(1.0,0.7);
+        Payment buyer1=new Payment();
+        buyer1.setOrder(oranges);
+        buyer1.setOrder(pork);
+        buyer1.setOrder(pasta);
 
-        Payment payment1 = new Payment();
+        buyer1.checkout(25);
+
+
     }
 }
