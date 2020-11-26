@@ -25,5 +25,9 @@ public class Cave {
         }
     }
 
+    public void expensiveBox() {
+
+
+    }
 
 }

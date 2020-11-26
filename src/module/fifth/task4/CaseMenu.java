@@ -3,8 +3,7 @@ package module.fifth.task4;
 import java.util.Scanner;
 
 public class CaseMenu {
-    Cave cave;
-
+    private Cave cave;
     private final Scanner scanner;
 
     public CaseMenu(Scanner scanner) {
