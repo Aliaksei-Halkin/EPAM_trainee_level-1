@@ -6,68 +6,68 @@ import java.util.*;
 
 public class MyCalendar {
 
-    private Vacation vacation;
-    private int year;
-
-    public MyCalendar(int year) {
-        this.year = year;
-
-    }
+    private static final int NUMBER_OF_MONTH = 12;
+    private final Vacation vacation;
 
     public MyCalendar(final Vacation vacation) {
         this.vacation = vacation;
     }
 
-
-
-    public void setWeekend() {
-        Calendar calendar = new GregorianCalendar(year, Calendar.JANUARY, 1);
-        for (int i = 1; i < 13; i++) {
-            for (int j = 0; j < calendar.getActualMaximum(Calendar.DAY_OF_MONTH); j++) {
-                calendar.roll(Calendar.DATE, 1);
-                if (calendar.get(GregorianCalendar.DAY_OF_WEEK)==1 ||calendar.get(GregorianCalendar.DAY_OF_WEEK)==7 ) {
-                    Date date = calendar.getTime();
-                   vacation.weekend.add(date);
-                }
-            }
-            calendar.roll(Calendar.MONTH, 1);
-        }
-    }
-    public void setHolidays(String str) {
-        Date date = null;
-        try {
-            date = new SimpleDateFormat( "dd.MM.yyyy" ).parse( str );
-            vacation.holidays.add(date);
-        } catch (ParseException e) {
-            e.printStackTrace();
-        }
+    public void addHoliday(String date) throws ParseException {
+        this.vacation.addHoliday(date);
     }
 
-    class Vacation {
-        private List<Date> weekend = new ArrayList<>();
+    public static class Vacation {
+        private List<Date> weekends = new ArrayList<>();
         private List<Date> holidays = new ArrayList<>();
 
+        public Vacation(final List<String> holidays, int year) throws ParseException {
+            addHolidays(holidays);
+            setWeekends(year);
+        }
+
+        private void addHolidays(final List<String> holidays) throws ParseException {
+            for (String holiday : holidays) {
+                addHoliday(holiday);
+            }
+        }
+
+        public Vacation(final List<Date> weekends, final List<Date> holidays) {
+            this.weekends = weekends;
+            this.holidays = holidays;
+        }
 
         public boolean isDateIsHoliday(final Date date) {
-            for (Date holiday : holidays) {
-                if (holiday.equals(date)) {
-                    return true;
-                }
-            }
-            return false;
+            return holidays.contains(date);
         }
 
         public boolean isDateIsWeekend(final Date date) {
-            for (Date holiday : holidays) {
-                if (holiday.equals(date)) {
-                    return true;
-                }
-            }
-            return false;
+            return weekends.contains(date);
         }
 
-        // является ли эта дата праздничной
-        // является ли эта дата выходным
+        private void setWeekends(int year) {
+            Calendar calendar = new GregorianCalendar(year, Calendar.JANUARY, 1);
+            for (int month = 0; month < NUMBER_OF_MONTH; month++) {
+                for (int day = 0; day < calendar.getActualMaximum(Calendar.DAY_OF_MONTH); day++) {
+                    calendar.roll(Calendar.DATE, 1);
+                    if (isWeekend(calendar)) {
+                        Date date = calendar.getTime();
+                        weekends.add(date);
+                    }
+                }
+                calendar.roll(Calendar.MONTH, 1);
+            }
+        }
+
+        private boolean isWeekend(final Calendar calendar) {
+            int dayOfWeek = calendar.get(GregorianCalendar.DAY_OF_WEEK);
+            return dayOfWeek == Calendar.SUNDAY || dayOfWeek == Calendar.SATURDAY;
+        }
+
+        public void addHoliday(String str) throws ParseException {
+            Date date = new SimpleDateFormat( "dd.MM.yyyy" ).parse(str);
+            holidays.add(date);
+        }
     }
 
     public boolean checkDateIsHoliday(Date date) {
