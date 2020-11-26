@@ -4,10 +4,10 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-public class Сave {
+public class Cave {
     private List<Riches> riches = new ArrayList<>();
 
-    public Сave() {
+    public Cave() {
 
     }
 

@@ -3,7 +3,7 @@ package module.fifth.task4;
 import java.util.Scanner;
 
 public class CaseMenu {
-    //private Cave cave;
+    Cave cave;
 
     private final Scanner scanner;
 
@@ -13,8 +13,8 @@ public class CaseMenu {
 
     public void printMenu() {
         System.out.println("1. Просмотреть сокровища\n" +
-                           "2. Выбора самого дорогого по стоимости сокровища\n" +
-                            "3. Выбора сокровища на заданную сумму\n");
+                "2. Выбора самого дорогого по стоимости сокровища\n" +
+                "3. Выбора сокровища на заданную сумму\n");
     }
 
     public void start() {
@@ -25,7 +25,7 @@ public class CaseMenu {
             key = this.scanner.nextInt();
             switch (key) {
                 case 1:
-
+                    cave.viewRiches();
                     break;
                 case 2:
 
@@ -37,8 +37,7 @@ public class CaseMenu {
                     System.out.println("Вы ввели неверное значение меню...\n");
             }
 
-       } while (key < 0 && key > 4);
-
+        } while (key < 0 && key > 4);
 
 
     }

@@ -17,7 +17,7 @@ import java.util.Scanner;
  */
 public class RunMain {
     public static void main(String[] args) {
-        Сave caveOfDragon = new Сave();
+        Cave caveOfDragon = new Cave();
         caveOfDragon.addRiches(new Riches("SmallBox", "diamond", 5, 100));
         caveOfDragon.addRiches(new Riches("SmallBox", "diamond", 7, 100));
         caveOfDragon.addRiches(new Riches("MediumBox", "diamond", 10, 100));
@@ -33,6 +33,5 @@ public class RunMain {
         CaseMenu caseMenu = new CaseMenu(new Scanner(System.in));
         caseMenu.start();
 
-caveOfDragon.viewRiches();
     }
 }
