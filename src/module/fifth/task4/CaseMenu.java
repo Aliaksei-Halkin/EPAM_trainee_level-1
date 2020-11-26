@@ -17,7 +17,7 @@ public class CaseMenu {
                 "3. Выбора сокровища на заданную сумму\n");
     }
 
-    public void start() {
+    public void start(Cave cave) {
         int key;
         printMenu();
         do {

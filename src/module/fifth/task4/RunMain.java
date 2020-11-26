@@ -29,9 +29,11 @@ public class RunMain {
         caveOfDragon.addRiches(new Riches("MediumBox", "platinum", 13, 120));
         caveOfDragon.addRiches(new Riches("BigBox", "gold", 40, 80));
 
+        Cave caveOfGnom = new Cave();
+        caveOfGnom.addRiches(new Riches("BIGBIGBox", "diamond", 500, 100));
 
         CaseMenu caseMenu = new CaseMenu(new Scanner(System.in));
-        caseMenu.start();
+        caseMenu.start(caveOfDragon);
 
     }
 }
