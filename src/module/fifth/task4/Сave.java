@@ -21,8 +21,7 @@ public class Сave {
 
     public void viewRiches() {
         for (Riches riche : riches) {
-           // System.out.println(riche.toString());
-
+            System.out.println(riche);
         }
     }
 

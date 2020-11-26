@@ -16,4 +16,13 @@ public class Riches {
         this.value = value;
         this.totalValue = weight * value;
     }
+
+    @Override
+    public String toString() {
+        return "titleOfRiches='" + titleOfRiches + '\'' +
+                ", content='" + content + '\'' +
+                ", weight=" + weight +
+                ", value=" + value +
+                ", totalValue=" + totalValue;
+    }
 }
