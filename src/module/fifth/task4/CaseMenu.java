@@ -6,6 +6,7 @@ public class CaseMenu {
     private Cave cave;
     private final Scanner scanner;
 
+
     public CaseMenu(Scanner scanner) {
         this.scanner = scanner;
     }
@@ -27,10 +28,12 @@ public class CaseMenu {
                     cave.viewRiches();
                     break;
                 case 2:
-
+                    cave.expensiveBox();
                     break;
                 case 3:
-
+                    System.out.println("На какую суму выдать? Введите значение");
+                    Scanner sc = new Scanner(System.in);
+                    cave.choiseOnTheAmount(sc.nextInt());
                     break;
                 default:
                     System.out.println("Вы ввели неверное значение меню...\n");
