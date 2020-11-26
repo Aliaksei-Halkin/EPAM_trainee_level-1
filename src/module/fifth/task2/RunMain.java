@@ -10,9 +10,9 @@ public class RunMain {
         Item pasta = new Item("Pasta",1,2);
 
         Payment buyer1=new Payment();
-        buyer1.setOrder(oranges);
-        buyer1.setOrder(pork);
-        buyer1.setOrder(pasta);
+        buyer1.addItemToOrder(oranges);
+        buyer1.addItemToOrder(pork);
+        buyer1.addItemToOrder(pasta);
 
         buyer1.checkout(25);
 

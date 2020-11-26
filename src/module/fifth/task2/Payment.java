@@ -2,7 +2,6 @@ package module.fifth.task2;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.ListIterator;
 
 /**
  * Создать класс Payment с внутренним классом, с помощью объектов которого можно сформировать
@@ -10,8 +9,7 @@ import java.util.ListIterator;
  */
 public class Payment {
     private final PaymentManager manager;
-    private List<Item> order = new ArrayList<>();
-
+    private final List<Item> order = new ArrayList<>();
 
     public Payment() {
         this.manager = new PaymentManager();
@@ -21,7 +19,7 @@ public class Payment {
         return order;
     }
 
-    public void setOrder(Item product) {
+    public void addItemToOrder(Item product) {
         this.manager.addItem(product);
     }
 
@@ -37,7 +35,6 @@ public class Payment {
 
         public void checkout(int cash) {
             double sumValue = 0;
-            int counter = 0;
             double sumWeight = 0;
 
             System.out.println("Your ORDER:");
@@ -45,20 +42,8 @@ public class Payment {
                 System.out.println(item);
                 sumValue += item.getValue();
                 sumWeight += item.getWeight();
-                counter++;
             }
-//            ListIterator<Item> listIterator = order.listIterator();
-//            while ((listIterator.hasNext())) {
-//                System.out.println(listIterator.next());
-//                counter++;
-//            }
-//            while ((listIterator.hasNext())) {
-//                sumValue += listIterator.next().getValue();//не работает
-//            }
-//            while ((listIterator.hasNext())) {
-//                sumWeight += listIterator.next().getWeight();
-//            }
-            System.out.println("Total item " +"\t"+ counter + "  Total sum " +"\t"+ sumValue + " ");
+            System.out.println("Total item " +"\t"+ order.size() + "  Total sum " +"\t"+ sumValue + " ");
             if (cash - sumValue >= 0) {
                 System.out.println("Your cash "+"\t" + cash + "\nYour change " + (cash - sumValue));
             } else {
