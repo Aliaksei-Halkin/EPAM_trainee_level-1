@@ -1,21 +1,18 @@
 package module.fifth.task4;
 
-import java.util.List;
 
 public class Riches {
-    private String titleOfRiches;
-    private String content;
+    private final String titleOfRiches;
+    private final String content;
     private double weight;
-    private double value;
     private double totalValue;
 
 
-    public Riches(String titleOfRiches, String content, double weight, double value) {
+    public Riches(String titleOfRiches, String content, double weight) {
         this.titleOfRiches = titleOfRiches;
         this.content = content;
         this.weight = weight;
-        this.value = value;
-        this.totalValue = weight * value;
+        this.totalValue = weight * 100;
     }
 
     public double getTotalValue() {
@@ -26,24 +23,22 @@ public class Riches {
         return titleOfRiches;
     }
 
-    public String getContent() {
-        return content;
-    }
+
 
     public double getWeight() {
         return weight;
     }
 
-    public double getValue() {
-        return value;
+    public void setWeight(double weight) {
+        this.weight = weight;
     }
+
 
     @Override
     public String toString() {
-        return "titleOfRiches='" + titleOfRiches + '\'' +
+        return titleOfRiches + '\'' +
                 ", content='" + content + '\'' +
                 ", weight=" + weight +
-                ", value=" + value +
                 ", totalValue=" + totalValue;
     }
 }

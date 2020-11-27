@@ -1,22 +1,17 @@
 package module.fifth.task4;
-
-import org.w3c.dom.ls.LSOutput;
-
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Comparator;
 import java.util.List;
 
 public class Cave {
     private List<Riches> riches = new ArrayList<>();
-
     public Cave() {
-
     }
 
     protected void addRiches(Riches riches) {
         this.riches.add(riches);
     }
+
 
     public List<Riches> getRiches() {
         return riches;
@@ -55,24 +50,22 @@ public class Cave {
 
     public void choiseOnTheAmount(double amount) {
         if (!riches.isEmpty()) {
+            sortOnTotalValue();
             if (amount < sumTotalValue()) {
-                double[][] allRiches = new double[][]{sumGold(),sumDiamond(), sumPlatinum(), };
-                System.out.println("итого вес-стоимость-цена за кг"+Arrays.deepToString(allRiches));
-
-                if (amount < allRiches[0][1]) {
-                    System.out.println("Получика ты " + amount / allRiches[0][2] + " килограмм золота");
-
-                }else if(amount <allRiches[0][1]+allRiches[1][1]){
-                    System.out.print("Получика ты " +  allRiches[0][2] + " килограмм золота");
-                    System.out.println(" и "+(amount%allRiches[0][2])/allRiches[1][2]+" килограмм бриллиантов");
-                }else {
-                    System.out.print("Получика ты " +  allRiches[0][2] + " килограмм золота");
-                    System.out.println(" и "+(amount%allRiches[0][2])/allRiches[1][2]+" килограмм бриллиантов");
-                    System.out.println(" и "+(amount%allRiches[0][3])/allRiches[1][2]+" килограмм платины");
-
-
+                int counterOfBoxes = 0;
+                System.out.println("Получи: " + amount / 100 + "килограмм золота: ");
+                for (Riches rh : riches) {
+                    if (amount > rh.getTotalValue()) {
+                        amount -= rh.getTotalValue();
+                        System.out.println(rh.toString());
+                        counterOfBoxes++;
+                    } else if (amount != 0 && amount < rh.getTotalValue()) {
+                        System.out.println(" и еще  часть из артефакта " + rh.getTitleOfRiches() + " на остаток денег ");
+                        rh.setWeight(rh.getWeight() - (amount / 100));
+                        break;
+                    }
                 }
-
+                removeRiches(counterOfBoxes);
 
             } else {
                 System.out.println("Столько нет сокровищ");
@@ -80,69 +73,19 @@ public class Cave {
         }
     }
 
+    private void removeRiches(int num) {
+        if (num >= 0) {
+            riches.subList(0, num + 1).clear();
+        }
+
+    }
+
     public double sumTotalValue() {
-        double counter = 0;
-        for (Riches rh : riches) {
-            counter += rh.getTotalValue();
-        }
-        return counter;
-    }
-
-    public double[] sumGold() {
-        double weight = 0;
         double totalValue = 0;
-        double valueOfKg = 0;
-        double[] items = new double[3];
         for (Riches rh : riches) {
-            if (rh.getContent().equalsIgnoreCase("gold")) {
-                weight += rh.getWeight();
-                totalValue += rh.getTotalValue();
-                valueOfKg = rh.getValue();
-            }
+            totalValue += rh.getTotalValue();
         }
-        items[0] = weight;
-        items[1] = totalValue;
-        items[2] = valueOfKg;
-
-        return items;
-    }
-
-    public double[] sumPlatinum() {
-        double weight = 0;
-        double totalValue = 0;
-        double valueOfKg = 0;
-        double[] items = new double[3];
-        for (Riches rh : riches) {
-            if (rh.getContent().equalsIgnoreCase("platinum")) {
-                weight += rh.getWeight();
-                totalValue += rh.getTotalValue();
-                valueOfKg = rh.getValue();
-            }
-        }
-        items[0] = weight;
-        items[1] = totalValue;
-        items[2] = valueOfKg;
-
-        return items;
-    }
-
-    public double[] sumDiamond() {
-        double weight = 0;
-        double totalValue = 0;
-        double valueOfKg = 0;
-        double[] items = new double[3];
-        for (Riches rh : riches) {
-            if (rh.getContent().equalsIgnoreCase("diamond")) {
-                weight += rh.getWeight();
-                totalValue += rh.getTotalValue();
-                valueOfKg = rh.getValue();
-            }
-        }
-        items[0] = weight;
-        items[1] = totalValue;
-        items[2] = valueOfKg;
-
-        return items;
+        return totalValue;
     }
 
 
