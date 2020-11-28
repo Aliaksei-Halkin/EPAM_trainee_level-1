@@ -1,10 +1,12 @@
 package module.fifth.task4;
+
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
 
 public class Cave {
     private List<Riches> riches = new ArrayList<>();
+
     public Cave() {
     }
 
@@ -62,7 +64,7 @@ public class Cave {
                     } else if (amount != 0 && amount < rh.getTotalValue()) {
                         System.out.println(" и еще  часть из артефакта " + rh.getTitleOfRiches() + " на остаток денег ");
                         rh.setWeight(rh.getWeight() - (amount / 100));
-                        break;
+                        amount = 0;
                     }
                 }
                 removeRiches(counterOfBoxes);
