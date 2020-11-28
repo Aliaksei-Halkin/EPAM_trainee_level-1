@@ -1,7 +1,5 @@
-package module.fifth.task5a;
-import static module.fifth.task5a.NameOfFlowers.*;
-import static module.fifth.task5a.Packaging.*;
-import static module.fifth.task5a.Colors.*;
+package module.fifth.task5b;
+import static module.fifth.task5b.Packaging.*;
 /**
  * Задача 5.
  *
@@ -13,16 +11,14 @@ import static module.fifth.task5a.Colors.*;
  * для проверки корректности переданных данных можно применить регулярные выражения.
  * Меню выбора действия пользователем можно не реализовывать, используйте заглушку.
  * Особое условие: переопределите, где необходимо, методы toString(), equals() и hashCode().
- * Вариант A. Цветочная композиция. Реализовать приложение, позволяющее создавать цветочные композиции (объект,
- * представляющий собой цветочную композицию). Составляющими цветочной композиции являются цветы и упаковка.
- *
+ * Вариант B. Подарки. Реализовать приложение, позволяющее создавать подарки (объект, представляющий собой подарок).
+ * Составляющими целого подарка являются сладости и упаковка.
  */
-
 public class RunMain {
     public static void main(String[] args) {
-        FlowerArrangement flowerArrangement=new FlowerArrangement(new Flower(ROSE,100,RED),CELLOPHANE,55);
-        System.out.println(flowerArrangement);
+     Present firstPresent=new Present(BIG_PAPER_BOX,1.5);
+        System.out.println(firstPresent);
+
+        //ввод пользователем? scanner?
     }
-    // может использовать сканер для ввода пользователем всех данных с проверкой? и сеттерами установить значения?
-    //доработаю
 }
