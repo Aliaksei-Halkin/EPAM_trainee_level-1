@@ -1,7 +1,7 @@
 package module.fifth.task5a;
-import static module.fifth.task5a.NameOfFlowers.*;
+import static module.fifth.task5a.FlowerName.*;
 import static module.fifth.task5a.Packaging.*;
-import static module.fifth.task5a.Colors.*;
+import static module.fifth.task5a.Color.*;
 /**
  * Задача 5.
  *
@@ -20,9 +20,8 @@ import static module.fifth.task5a.Colors.*;
 
 public class RunMain {
     public static void main(String[] args) {
-        FlowerArrangement flowerArrangement=new FlowerArrangement(new Flower(ROSE,100,RED),CELLOPHANE,55);
-        System.out.println(flowerArrangement);
+        Florist florist = new Florist();
+        FlowerArrangement complex = florist.complex(new FlowerArrangementBuilder());
+        System.out.println(complex);
     }
-    // может использовать сканер для ввода пользователем всех данных с проверкой? и сеттерами установить значения?
-    //доработаю
 }

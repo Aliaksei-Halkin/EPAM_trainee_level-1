@@ -1,22 +1,34 @@
 package module.fifth.task5a;
 
-public class FlowerArrangement {
-    private Flower flower;
-    private Packaging packaging;
-    private int quantity;
+import java.util.ArrayList;
+import java.util.List;
 
-    public FlowerArrangement(Flower flower, Packaging packaging,int quantity) {
-        this.flower = flower;
+public class FlowerArrangement {
+    private List<Flower> flowers;
+    private Packaging packaging;
+
+    public FlowerArrangement() {
+        flowers = new ArrayList<>();
+    }
+
+    public FlowerArrangement(List<Flower> flowers, Packaging packaging) {
+        this.flowers = flowers;
         this.packaging = packaging;
-        this.quantity=quantity;
     }
 
     @Override
     public String toString() {
         return "FlowerArrangement{" +
-                "flower=" + flower +
+                "flowers=" + flowers +
                 ", packaging=" + packaging +
-                ", quantity=" + quantity +
                 '}';
+    }
+
+    public void addFlower(Flower flower) {
+        flowers.add(flower);
+    }
+
+    public void setPackaging(final Packaging packaging) {
+        this.packaging = packaging;
     }
 }

@@ -2,28 +2,26 @@ package module.fifth.task4;
 
 
 public class Riches {
+
+    public static final int PRICE_PER_KILO = 100;
+
     private final String titleOfRiches;
     private final String content;
     private double weight;
-    private double totalValue;
-
 
     public Riches(String titleOfRiches, String content, double weight) {
         this.titleOfRiches = titleOfRiches;
         this.content = content;
         this.weight = weight;
-        this.totalValue = weight * 100;
     }
 
     public double getTotalValue() {
-        return totalValue;
+        return weight * PRICE_PER_KILO;
     }
 
     public String getTitleOfRiches() {
         return titleOfRiches;
     }
-
-
 
     public double getWeight() {
         return weight;
@@ -33,12 +31,11 @@ public class Riches {
         this.weight = weight;
     }
 
-
     @Override
     public String toString() {
         return titleOfRiches + '\'' +
                 ", content='" + content + '\'' +
                 ", weight=" + weight +
-                ", totalValue=" + totalValue;
+                ", totalValue=" + getTotalValue();
     }
 }

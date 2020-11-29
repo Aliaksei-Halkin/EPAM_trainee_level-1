@@ -1,5 +1,5 @@
 package module.fifth.task5a;
 
-public enum NameOfFlowers {
+public enum FlowerName {
     ROSE,PEONY, FREESIA, JASMINE, BLOSSOM, ORCHID, TUBEROSE, GARDENIA
 }

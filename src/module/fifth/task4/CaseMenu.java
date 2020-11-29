@@ -3,7 +3,7 @@ package module.fifth.task4;
 import java.util.Scanner;
 
 public class CaseMenu {
-    private Cave cave;
+
     private final Scanner scanner;
 
 
@@ -33,7 +33,8 @@ public class CaseMenu {
                 case 3:
                     System.out.println("На какую суму выдать? Введите значение");
                     Scanner sc = new Scanner(System.in);
-                    cave.choiseOnTheAmount(sc.nextInt());
+                    int amount = sc.nextInt();
+                    cave.choiceOnTheAmount(amount);
                     break;
                 default:
                     System.out.println("Вы ввели неверное значение меню...\n");
