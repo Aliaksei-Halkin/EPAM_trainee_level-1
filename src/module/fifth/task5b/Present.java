@@ -1,23 +1,40 @@
 package module.fifth.task5b;
 
-import java.util.Arrays;
+import java.util.ArrayList;
+import java.util.List;
 
 public class Present {
     private Packaging packaging;
-    private TypesOfCandy[] types;
+    private List<TypesOfCandy> types = new ArrayList<>();
+
     private double weight;
+
+    public Present() {
+    }
 
     public Present(Packaging packaging, double weight) {
         this.packaging = packaging;
         this.weight = weight;
-        types = TypesOfCandy.values();
+
+    }
+
+    void setPackaging(Packaging packaging) {
+        this.packaging = packaging;
+    }
+
+    void addCandy(TypesOfCandy typesOfCandy) {
+        types.add(typesOfCandy);
+    }
+
+    public void setWeight(double weight) {
+        this.weight = weight;
     }
 
     @Override
     public String toString() {
         return "Present{" +
                 "packaging=" + packaging +
-                ", types=" + Arrays.toString(types) +
+                ", types=" + types +
                 ", weight=" + weight +
                 '}';
     }
